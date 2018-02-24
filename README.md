@@ -11,6 +11,13 @@
 - Run a pod install to make sure everything is up to date
 - Run the project... if you start it before the game is live, it won't connect because the socket url isn't available, so once the game is live, click the "HackQ" label at the top of the window (or you can just wait until the countdown starts to launch it)
 
+
+## How it works:
+- Uses Alamofire to make a request to the game url
+- Once the game is live, the "socketUrl" becomes available under the "broadcast" structure
+- A socket is opened with SwiftWebSocket, using all required headers
+- When a message is received, it is checked if it is a question then it parses the answers and sets the labels as their string value then solves (chat messages come through with the socket too, so this is why you have to check the type)
+
 ## Requirements (Pods):
 - Alamofire (for HTTPS requests, to find the socketUrl which changes each broadcast)
 - SwiftyJSON (for easy JSON parsing)
@@ -19,7 +26,6 @@
 
 ## Support:
 - If you need any help, open an issue, I will try to help
-
 
 ## Disclaimer:
 - This is meant for educational use only, I do not advise you to use this in an actual HQ game because it is against their terms of service
