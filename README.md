@@ -11,7 +11,6 @@
 - Run a pod install to make sure everything is up to date
 - Run the project... if you start it before the game is live, it won't connect because the socket url isn't available, so once the game is live, click the "HackQ" label at the top of the window (or you can just wait until the countdown starts to launch it)
 
-
 ## How it works:
 - Uses Alamofire to make a request to the game url
 - Once the game is live, the "socketUrl" becomes available under the "broadcast" structure
