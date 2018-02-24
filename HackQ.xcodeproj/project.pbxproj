@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D23C13D9D3BF3018377E6A9A /* Pods_HackQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */; };
+		F86D1F75203BB5CE00D01A65 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D1F74203BB5CE00D01A65 /* WindowController.swift */; };
+		F8BDF5F02040ED8100AE830A /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5EF2040ED8100AE830A /* Google.swift */; };
+		F8BDF5F22040ED9F00AE830A /* AnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5F12040ED9F00AE830A /* AnswerController.swift */; };
+		F8BDF5F62040EE0500AE830A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5F52040EE0500AE830A /* Extensions.swift */; };
+		F8BDF5F82040EE6700AE830A /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5F72040EE6700AE830A /* QuestionType.swift */; };
+		F8BDF5FA2040EE8B00AE830A /* SiteEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5F92040EE8B00AE830A /* SiteEncoding.swift */; };
+		F8FB7151203B5304004F7787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB7150203B5304004F7787 /* AppDelegate.swift */; };
+		F8FB7153203B5304004F7787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB7152203B5304004F7787 /* ViewController.swift */; };
+		F8FB7155203B5304004F7787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FB7154203B5304004F7787 /* Assets.xcassets */; };
+		F8FB7158203B5304004F7787 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FB7156203B5304004F7787 /* Main.storyboard */; };
+		F8FB7169203B54BF004F7787 /* CircularStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F8FB7161203B54BE004F7787 /* CircularStd-Bold.otf */; };
+		F8FB716A203B54BF004F7787 /* CircularStd-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F8FB7162203B54BE004F7787 /* CircularStd-BookItalic.otf */; };
+		F8FB716B203B54BF004F7787 /* CircularStd-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F8FB7163203B54BE004F7787 /* CircularStd-BoldItalic.otf */; };
+		F8FB716C203B54BF004F7787 /* CircularStd-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F8FB7164203B54BE004F7787 /* CircularStd-MediumItalic.otf */; };
+		F8FB716D203B54BF004F7787 /* CircularStd-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = F8FB7165203B54BF004F7787 /* CircularStd-Book.otf */; };
+		F8FB716E203B54BF004F7787 /* CircularStd-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F8FB7166203B54BF004F7787 /* CircularStd-Medium.otf */; };
+		F8FB716F203B54BF004F7787 /* CircularStd-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F8FB7167203B54BF004F7787 /* CircularStd-Black.otf */; };
+		F8FB7170203B54BF004F7787 /* CircularStd-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F8FB7168203B54BF004F7787 /* CircularStd-BlackItalic.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7DBE5F04D00B4D86D163E186 /* Pods-HackQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackQ/Pods-HackQ.debug.xcconfig"; sourceTree = "<group>"; };
+		D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F396D168149D3C696E359D36 /* Pods-HackQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackQ/Pods-HackQ.release.xcconfig"; sourceTree = "<group>"; };
+		F86D1F74203BB5CE00D01A65 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		F8BDF5EF2040ED8100AE830A /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
+		F8BDF5F12040ED9F00AE830A /* AnswerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerController.swift; sourceTree = "<group>"; };
+		F8BDF5F52040EE0500AE830A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F8BDF5F72040EE6700AE830A /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
+		F8BDF5F92040EE8B00AE830A /* SiteEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteEncoding.swift; sourceTree = "<group>"; };
+		F8FB714D203B5304004F7787 /* HackQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8FB7150203B5304004F7787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F8FB7152203B5304004F7787 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8FB7154203B5304004F7787 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8FB7157203B5304004F7787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F8FB7159203B5304004F7787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8FB7161203B54BE004F7787 /* CircularStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.otf"; sourceTree = "<group>"; };
+		F8FB7162203B54BE004F7787 /* CircularStd-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BookItalic.otf"; sourceTree = "<group>"; };
+		F8FB7163203B54BE004F7787 /* CircularStd-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BoldItalic.otf"; sourceTree = "<group>"; };
+		F8FB7164203B54BE004F7787 /* CircularStd-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-MediumItalic.otf"; sourceTree = "<group>"; };
+		F8FB7165203B54BF004F7787 /* CircularStd-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Book.otf"; sourceTree = "<group>"; };
+		F8FB7166203B54BF004F7787 /* CircularStd-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Medium.otf"; sourceTree = "<group>"; };
+		F8FB7167203B54BF004F7787 /* CircularStd-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Black.otf"; sourceTree = "<group>"; };
+		F8FB7168203B54BF004F7787 /* CircularStd-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-BlackItalic.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8FB714A203B5304004F7787 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D23C13D9D3BF3018377E6A9A /* Pods_HackQ.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5194F208AE48B23DB6B0059C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C71ABCFF6401BFFACC1C45AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DBE5F04D00B4D86D163E186 /* Pods-HackQ.debug.xcconfig */,
+				F396D168149D3C696E359D36 /* Pods-HackQ.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F8FB7144203B5304004F7787 = {
+			isa = PBXGroup;
+			children = (
+				F8FB714F203B5304004F7787 /* HackQ */,
+				F8FB714E203B5304004F7787 /* Products */,
+				C71ABCFF6401BFFACC1C45AA /* Pods */,
+				5194F208AE48B23DB6B0059C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F8FB714E203B5304004F7787 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8FB714D203B5304004F7787 /* HackQ.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8FB714F203B5304004F7787 /* HackQ */ = {
+			isa = PBXGroup;
+			children = (
+				F8FB7150203B5304004F7787 /* AppDelegate.swift */,
+				F8FB7152203B5304004F7787 /* ViewController.swift */,
+				F86D1F74203BB5CE00D01A65 /* WindowController.swift */,
+				F8BDF5EF2040ED8100AE830A /* Google.swift */,
+				F8BDF5F12040ED9F00AE830A /* AnswerController.swift */,
+				F8BDF5F52040EE0500AE830A /* Extensions.swift */,
+				F8BDF5F72040EE6700AE830A /* QuestionType.swift */,
+				F8BDF5F92040EE8B00AE830A /* SiteEncoding.swift */,
+				F8FB7154203B5304004F7787 /* Assets.xcassets */,
+				F8FB7156203B5304004F7787 /* Main.storyboard */,
+				F8FB7159203B5304004F7787 /* Info.plist */,
+				F8FB7160203B54B5004F7787 /* Fonts */,
+			);
+			path = HackQ;
+			sourceTree = "<group>";
+		};
+		F8FB7160203B54B5004F7787 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F8FB7167203B54BF004F7787 /* CircularStd-Black.otf */,
+				F8FB7168203B54BF004F7787 /* CircularStd-BlackItalic.otf */,
+				F8FB7161203B54BE004F7787 /* CircularStd-Bold.otf */,
+				F8FB7163203B54BE004F7787 /* CircularStd-BoldItalic.otf */,
+				F8FB7165203B54BF004F7787 /* CircularStd-Book.otf */,
+				F8FB7162203B54BE004F7787 /* CircularStd-BookItalic.otf */,
+				F8FB7166203B54BF004F7787 /* CircularStd-Medium.otf */,
+				F8FB7164203B54BE004F7787 /* CircularStd-MediumItalic.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8FB714C203B5304004F7787 /* HackQ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8FB715D203B5304004F7787 /* Build configuration list for PBXNativeTarget "HackQ" */;
+			buildPhases = (
+				7F71DFB1CA4888C92CF8F302 /* [CP] Check Pods Manifest.lock */,
+				F8FB7149203B5304004F7787 /* Sources */,
+				F8FB714A203B5304004F7787 /* Frameworks */,
+				F8FB714B203B5304004F7787 /* Resources */,
+				8E39A61C5DB09E3EF0402AE8 /* [CP] Embed Pods Frameworks */,
+				786D8DF84A21CD314CD07390 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HackQ;
+			productName = HackQ;
+			productReference = F8FB714D203B5304004F7787 /* HackQ.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8FB7145203B5304004F7787 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Gordon Jacobs";
+				TargetAttributes = {
+					F8FB714C203B5304004F7787 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F8FB7148203B5304004F7787 /* Build configuration list for PBXProject "HackQ" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8FB7144203B5304004F7787;
+			productRefGroup = F8FB714E203B5304004F7787 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8FB714C203B5304004F7787 /* HackQ */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8FB714B203B5304004F7787 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8FB716B203B54BF004F7787 /* CircularStd-BoldItalic.otf in Resources */,
+				F8FB716C203B54BF004F7787 /* CircularStd-MediumItalic.otf in Resources */,
+				F8FB7155203B5304004F7787 /* Assets.xcassets in Resources */,
+				F8FB716F203B54BF004F7787 /* CircularStd-Black.otf in Resources */,
+				F8FB7170203B54BF004F7787 /* CircularStd-BlackItalic.otf in Resources */,
+				F8FB716E203B54BF004F7787 /* CircularStd-Medium.otf in Resources */,
+				F8FB716D203B54BF004F7787 /* CircularStd-Book.otf in Resources */,
+				F8FB7169203B54BF004F7787 /* CircularStd-Bold.otf in Resources */,
+				F8FB7158203B5304004F7787 /* Main.storyboard in Resources */,
+				F8FB716A203B54BF004F7787 /* CircularStd-BookItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		786D8DF84A21CD314CD07390 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackQ/Pods-HackQ-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F71DFB1CA4888C92CF8F302 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackQ-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E39A61C5DB09E3EF0402AE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HackQ/Pods-HackQ-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackQ/Pods-HackQ-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8FB7149203B5304004F7787 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8BDF5F02040ED8100AE830A /* Google.swift in Sources */,
+				F8BDF5FA2040EE8B00AE830A /* SiteEncoding.swift in Sources */,
+				F8BDF5F82040EE6700AE830A /* QuestionType.swift in Sources */,
+				F8BDF5F62040EE0500AE830A /* Extensions.swift in Sources */,
+				F8FB7153203B5304004F7787 /* ViewController.swift in Sources */,
+				F86D1F75203BB5CE00D01A65 /* WindowController.swift in Sources */,
+				F8FB7151203B5304004F7787 /* AppDelegate.swift in Sources */,
+				F8BDF5F22040ED9F00AE830A /* AnswerController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F8FB7156203B5304004F7787 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8FB7157203B5304004F7787 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8FB715B203B5304004F7787 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F8FB715C203B5304004F7787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		F8FB715E203B5304004F7787 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DBE5F04D00B4D86D163E186 /* Pods-HackQ.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 866392CC56;
+				INFOPLIST_FILE = HackQ/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gjacobs314.HackQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		F8FB715F203B5304004F7787 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F396D168149D3C696E359D36 /* Pods-HackQ.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 866392CC56;
+				INFOPLIST_FILE = HackQ/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gjacobs314.HackQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8FB7148203B5304004F7787 /* Build configuration list for PBXProject "HackQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8FB715B203B5304004F7787 /* Debug */,
+				F8FB715C203B5304004F7787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8FB715D203B5304004F7787 /* Build configuration list for PBXNativeTarget "HackQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8FB715E203B5304004F7787 /* Debug */,
+				F8FB715F203B5304004F7787 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8FB7145203B5304004F7787 /* Project object */;
+}
