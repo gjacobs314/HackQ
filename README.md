@@ -17,7 +17,7 @@
 - A socket is opened with SwiftWebSocket, using all required headers
 - When a message is received, it is checked if it is a question then it parses the answers and sets the labels as their string value then solves (chat messages come through with the socket too, so this is why you have to check the type)
 
-## Requirements (Pods):
+## Requirements (CocoaPods):
 - Alamofire (for HTTPS requests, to find the socketUrl which changes each broadcast)
 - SwiftyJSON (for easy JSON parsing)
 - SwiftWebSocket (for opening the WebSocket that gets questions and answers, with authorization and other headers)
