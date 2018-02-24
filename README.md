@@ -29,5 +29,12 @@
 ## Disclaimer:
 - This is meant for educational use only, I do not advise you to use this in an actual HQ game because it is against their terms of service
 
+## TODO:
+- [ ] Improve accuracy (only 80% success rate right now).
+- [ ] Show percentages of answers.
+- [ ] Show chat messages.
+- [ ] Display the video stream of the game show.
+- [ ] Let the program answer for you/submit the best answer, so no need to use your phone.
+
 ## Credits:
 - [Daniel Smith (Search Method)](https://github.com/DanielSmith1239/)
