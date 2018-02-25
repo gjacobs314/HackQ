@@ -11,7 +11,7 @@ import Foundation
 class Google
 {
     static let removeFromOption = ["of", "the", "?"]
-    
+
     /**
      Finds matches for the options by Googling the question for every option, and includes the option in the search query.
      - Parameters:
@@ -41,7 +41,7 @@ class Google
             completion(answerCounts)
         }
     }
-    
+
     /**
      Finds matches for the options in a Google page.
      - Parameters:
@@ -71,7 +71,7 @@ class Google
             completion(answerCounts)
         }
     }
-    
+
     /**
      Finds matches for the options in the Google page by adding all of the options to the search query.
      - Parameters:
@@ -101,7 +101,7 @@ class Google
             completion(answerCounts)
         }
     }
-    
+
     /**
      Finds matches for the options in the Google page, for when the question contains a quote.
      - Parameters:
@@ -133,7 +133,7 @@ class Google
             completion(answerCounts)
         }
     }
-    
+
     /**
      Finds matches for the specified answers on Google.  This method will swap the largest and second largest answers
      - Parameter question: The question being asked
@@ -187,9 +187,9 @@ class Google
             }
         }
     }
-    
+
     /**
-     
+
      */
     static func numberOfResultsBasedMatches(for question: String = "", overridingAnswers: [String] = [String](), including searchStrings: [String] = [String](), completion: @escaping (AnswerCounts) -> Void)
     {
@@ -209,7 +209,7 @@ class Google
             completion(answerCounts)
         }
     }
-    
+
     /**
      Finds matches for the options in the Google, for when you want the option with the least hits.
      - Parameters:
@@ -233,7 +233,7 @@ class Google
             completion(invertedNumberOfResults)
         }
     }
-    
+
     private static func numberOfMatches(in page: String, longString: String, shortString: String) -> Int
     {
         var ret = 0
@@ -243,7 +243,7 @@ class Google
         {
             tempStr.removeLast()
         }
-        
+
         ret += searchPage.components(separatedBy: tempStr.lowercased()).count - 1
         let arr = longString.split(separator: " ")
         var temp = 0
@@ -251,7 +251,7 @@ class Google
         for (k, str3) in arr.enumerated()
         {
             var test = str3
-            
+
             if test.count > 7
             {
                 test.removeLast()
@@ -281,14 +281,14 @@ class Google
             }
         }
         ret += toDivide > 0 ? temp / toDivide : temp
-        
+
         ret += searchPage.components(separatedBy: " \(shortString.lowercased()))").count - 1
-        
+
         return ret
     }
-    
+
     /**
-     
+
      */
     private static func fixForSameNumberMatches(_ matches: AnswerCounts, numResults: AnswerCounts, shouldAddResults: Bool = true, completion: @escaping (AnswerCounts) -> ())
     {
@@ -299,12 +299,12 @@ class Google
         }
         var returnCounts = matches
         var tempResults = numResults
-        
+
         let largest = numResults.largest
         let largestResults = largest.1
         tempResults[largest.0] = 0
         let secondLargestResults = tempResults.largest.1
-        
+
         if largestResults > 0, secondLargestResults > 0, shouldAddResults
         {
             let percentDifference = (Double(secondLargestResults) / Double(largestResults)) * 100.0
@@ -326,7 +326,7 @@ class Google
             completion(returnCounts)
         }
     }
-    
+
     /**
      Determines whether or not the specified option is contained in the question
      - Parameter answer: The string to search for
@@ -341,7 +341,7 @@ class Google
         }
         return false
     }
-    
+
     /**
      Returns all instances within a string that match the given regular expression
      - Parameter regex: A regular expression
@@ -361,7 +361,7 @@ class Google
             return nil
         }
     }
-    
+
     /**
      Downloads and parses search results from a custom Google Search Engine
      - Parameter searchString: The string to search
@@ -417,4 +417,3 @@ class Google
         }.resume()
     }
 }
-

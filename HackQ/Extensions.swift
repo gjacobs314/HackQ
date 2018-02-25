@@ -12,9 +12,9 @@ import Cocoa
 struct AnswerCounts : CustomStringConvertible, CustomDebugStringConvertible
 {
     private var innerRepresentation = [String : Int]()
-    
+
     var isOpposite = false
-    
+
     subscript(key: String) -> Int
     {
         get
@@ -26,13 +26,13 @@ struct AnswerCounts : CustomStringConvertible, CustomDebugStringConvertible
             innerRepresentation[key] = newValue
         }
     }
-    
+
     ///Returns the number of strings
     var count : Int
     {
         return innerRepresentation.count
     }
-    
+
     var sumOfResults : Int
     {
         var sum = 0
@@ -42,12 +42,12 @@ struct AnswerCounts : CustomStringConvertible, CustomDebugStringConvertible
         }
         return sum
     }
-    
+
     var dump : [(String, Int)]
     {
         return innerRepresentation.map({ return ($0, $1) })
     }
-    
+
     ///Returns the String and visibility count with the largest visibility count
     var largest : (String, Int)
     {
@@ -61,7 +61,7 @@ struct AnswerCounts : CustomStringConvertible, CustomDebugStringConvertible
         }
         return max
     }
-    
+
     ///Returns the String and visibility count with the smallest visibility count
     var smallest : (String, Int)
     {
@@ -75,7 +75,7 @@ struct AnswerCounts : CustomStringConvertible, CustomDebugStringConvertible
         }
         return min
     }
-    
+
     ///Returns how many times a certain visiblity count is witnessed
     var countsOfResults : [Int : Int]
     {
@@ -86,7 +86,7 @@ struct AnswerCounts : CustomStringConvertible, CustomDebugStringConvertible
         }
         return counts
     }
-    
+
     var description: String
     {
         var string = ""
@@ -96,7 +96,7 @@ struct AnswerCounts : CustomStringConvertible, CustomDebugStringConvertible
         }
         return string.trimmingCharacters(in: .whitespacesAndNewlines)
     }
-    
+
     var debugDescription: String
     {
         var string = ""
@@ -118,7 +118,7 @@ private struct Replacement
 {
     let search : String
     let replacement : String
-    
+
     init(search: String, replacement: String)
     {
         self.search = search
@@ -172,20 +172,20 @@ extension NSWindow
             let numberOfShakes = 3
             let frame = self.frame
             let shakeAnimation = CAKeyframeAnimation()
-            
+
             let shakePath = CGMutablePath()
             shakePath.move(to: CGPoint(x: frame.minX, y: frame.minY))
-            
+
             for _ in 0...numberOfShakes - 1
             {
                 shakePath.addLine(to: CGPoint(x: frame.minX - frame.size.width * intensity, y: frame.minY))
                 shakePath.addLine(to: CGPoint(x: frame.minX + frame.size.width * intensity, y: frame.minY))
             }
-            
+
             shakePath.closeSubpath()
             shakeAnimation.path = shakePath
             shakeAnimation.duration = duration
-            
+
             animations = [NSAnimatablePropertyKey(rawValue: "frameOrigin") : shakeAnimation]
         }
         animator().setFrameOrigin(self.frame.origin)
@@ -199,7 +199,7 @@ extension String
     {
         return [" of these ", " his ", " is ", " her ", " their ", " in ", " from ", " was ", " which ", "?", "\"", " or ", " a ", " an ", " of ", " the ", " that ", " what ", " to ", " for ", " only ", " not ", " does ", " NOT ", " would ", " you ", " need ", " at ", "On ", " find ", " all time ", "Which ", "What is ","What ",  "For", "also", "with"]
     }
-    
+
     ///Returns `true` if `self` contains any word listed in the `extraneousWords` parameter, `false` otherwise
     var hasExtraneousWords : Bool
     {
@@ -213,7 +213,7 @@ extension String
         }
         return false
     }
-    
+
     ///Returns a string after stripping out any word listed in the `extraneousWords` parameter
     var withoutExtraneousWords : String
     {
@@ -222,7 +222,7 @@ extension String
         question = question.replacingOccurrences(of: "  ", with: " ")
         return question
     }
-    
+
     ///Returns a string formatted for Google
     var googleOption : String
     {
@@ -233,7 +233,7 @@ extension String
         }
         return ret.replacingOccurrences(of: "  ", with: " ")
     }
-    
+
     /**
      Returns a bool determining whether at least one element in the speicifed collection is contained in `self`
      - Parameter collection: An array of strings to search for
@@ -250,17 +250,17 @@ extension String
         }
         return false
     }
-    
+
     ///Returns a list of words in `self` that are not included in the `extraneousWords` parameter
     var searchWords : [String]
     {
         let trimmedQuestion = withoutExtraneousWords
         return trimmedQuestion.split(separator: " ").map { String($0) }
     }
-    
+
     /**
      URL Encodes a string
-     
+
      **Programmer Notes:** This method may need to be modified with each new SiteEncoding added
      - Parameter siteEncoding: A `SiteEncoding` by which to encode a string
      - Returns: A URL encoded version of `self`
@@ -273,7 +273,7 @@ extension String
             let punctuationToRemove = ["\"", "\\", "“", "”", "?", "#", "&", ".", ",", "’", "”", "“"]
             let punctuationToReplace = ["  ", " "]
             var fixed = strippingIllegalCharacters
-            
+
             if fixed.contains(".")
             {
                 var words = fixed.components(separatedBy: " ")
@@ -295,7 +295,7 @@ extension String
             {
                 fixed = fixed.withoutExtraneousWords
             }
-            
+
             for item in punctuationToReplace
             {
                 fixed = fixed.replacingOccurrences(of: item, with: "+")
@@ -311,7 +311,7 @@ extension String
             return nil
         }
     }
-    
+
     ///Returns a copy of `self` in which certain text elements created from Tesseract are replaced
     var fixedText : String
     {
@@ -323,7 +323,7 @@ extension String
         }
         return returnString
     }
-    
+
     ///Returns a copy of `self` by stripping out invalid characters
     var strippingIllegalCharacters : String
     {
@@ -331,4 +331,3 @@ extension String
         return fixedText.trimmingCharacters(in: legalCharacters)
     }
 }
-

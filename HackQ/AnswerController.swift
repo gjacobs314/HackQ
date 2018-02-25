@@ -10,16 +10,16 @@ import AppKit
 
 /**
  Stores information about each answer and its probability of being the correct answer
- 
+
  The most probable answer is stored separately for more explicit and quicker recall
  */
 struct Answer
 {
     let correctAnswer : String
     let probability : CGFloat
-    
+
     let others : [(String, CGFloat)]
-    
+
     init(correctAnswer: String, probability: CGFloat, others: [(String, CGFloat)])
     {
         self.correctAnswer = correctAnswer
@@ -31,7 +31,7 @@ struct Answer
 class AnswerController
 {
     private static let questionTypes : [QuestionType] = [.not, .definition, .otherTwo, .whichOfThese, .midWhich, .correctSpelling, .whose, .who, .howMany, .startsWhich, .isWhat, .startWhat, .endWhat, .midWhat, .whereIs, .other]
-    
+
     /**
      Attempts to answer a question by using Google.  Questions can range in type, as such this method serves as a delegator to various question types
      - Parameter question: The question being asked
@@ -42,7 +42,7 @@ class AnswerController
     static func answer(for question: String, answers: [String], completion: @escaping (_ answer: Answer) -> ())
     {
         let questionType = type(forQuestion: question)
-        
+
         func processAnswer(for matches: AnswerCounts)
         {
             let largestMatch = matches.largest
@@ -60,9 +60,9 @@ class AnswerController
                 }
                 completion(Answer(correctAnswer: largestMatch.0, probability: CGFloat(largestMatch.1) / CGFloat(sum), others: others))
             }
-            
+
         }
-        
+
         switch questionType.searchFunctionCode
         {
         case 5, 7, 3:
@@ -70,7 +70,7 @@ class AnswerController
             matches(for: question, answers: answers) { matches in
                 processAnswer(for: matches)
             }
-            
+
         default:
             //For everything else, questions have the potential to be answered without needing precision
             Google.matches(for: question, including: answers) { matches in
@@ -86,7 +86,7 @@ class AnswerController
             }
         }
     }
-    
+
     /**
      Dispatches more precise question answering
      - Parameter question: The question being asked
@@ -134,7 +134,7 @@ class AnswerController
             }
         }
     }
-    
+
     /**
      Determines the type of question being asked
      - Parameter question: The questin being asked
@@ -151,7 +151,7 @@ class AnswerController
         }
         return QuestionType.other
     }
-    
+
     /**
      Finds the first answer in a list of answers that is spelled correctly.  Can be done locally as macOS has a built-in spell checker
      - Parameter: answers: A list of answers to check against
@@ -173,4 +173,3 @@ class AnswerController
         return answerCounts
     }
 }
-
