@@ -1,5 +1,7 @@
 # Welcome to HackQ for Swift (MacOS)
 
+![alt text](https://i.imgur.com/mwgmCpC.png)
+
 ## Features:
 - Gets questions directly from the HQ WebSocket, no need to do OCR
 - Solves them using a complex search method created by [Daniel Smith](https://github.com/DanielSmith1239/)
