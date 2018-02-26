@@ -39,6 +39,7 @@
 - This is meant for educational use only, I do not advise you to use this in an actual HQ game because it is against their terms of service
 
 ## TODO:
+- [ ] Make a website that shows the answers.
 - [ ] Improve accuracy (only 80% success rate right now).
 - [ ] Show percentages of answers.
 - [ ] Show chat messages.
