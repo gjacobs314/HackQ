@@ -5,7 +5,7 @@
 ## Features:
 - Gets questions directly from the HQ WebSocket, no need to do OCR
 - Solves them using a complex search method created by [Daniel Smith](https://github.com/DanielSmith1239/)
-- Clean, friendly, simple UI
+- Clean, friendly, and simple UI
 
 ## How to use:
 - Download the repo/clone it
