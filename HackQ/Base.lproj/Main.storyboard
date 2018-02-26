@@ -109,11 +109,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vf0-cm-waf">
-                                <rect key="frame" x="303" y="369" width="95" height="47"/>
+                                <rect key="frame" x="303" y="354" width="95" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="bevel" title="HackQ" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="YkY-7X-3xP">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                    <font key="font" size="25" name="CircularStd-Medium"/>
+                                    <font key="font" size="25" name="CircularStd-Book"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="openSocket:" target="XfG-lQ-9wD" id="f7p-K1-bNO"/>
