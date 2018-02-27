@@ -4,7 +4,7 @@
 
 ## Features:
 - Gets questions directly from the HQ WebSocket, no need to do OCR
-- Solves them using a complex search method created by [Daniel Smith](https://github.com/DanielSmith1239/)
+- Solves them using a search method created by [Daniel Smith](https://github.com/DanielSmith1239/)
 - Clean, friendly, and simple UI
 
 ## How to use:
@@ -40,7 +40,7 @@
 
 ## TODO:
 - [ ] Make a website that shows the answers.
-- [ ] Improve accuracy (only 80% success rate right now).
+- [ ] Improve accuracy and add additional algorithms for searching.
 - [ ] Show percentages of answers.
 - [ ] Show chat messages.
 - [ ] Display the video stream of the game show.
