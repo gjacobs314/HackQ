@@ -21,7 +21,7 @@
 - User ID: 11664553
 
 ## How it works:
-- Uses Alamofire to make a request to the game url
+- Uses Alamofire to make a request to the host
 - Once the game is live, the "socketUrl" becomes available under the "broadcast" structure
 - A socket is opened with SwiftWebSocket, using all required headers
 - When a message is received, it is checked if it is a question then it parses the answers and sets the labels as their string value then solves (chat messages come through with the socket too, so this is why you have to check the type)
