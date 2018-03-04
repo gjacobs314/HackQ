@@ -41,7 +41,7 @@
 ## TODO:
 - [ ] Make a website that shows the answers.
 - [ ] Improve accuracy and add additional algorithms for searching.
-- [ ] Show percentages of answers.
+- [ ] Show percentages of answers/confidence to aid answering.
 - [ ] Show chat messages.
 - [ ] Display the video stream of the game show.
 - [ ] Let the program answer for you/submit the best answer, so no need to use your phone.
