@@ -39,7 +39,7 @@
 - This is meant for educational use only, I do not advise you to use this in an actual HQ game because it is against their terms of service
 
 ## TODO:
-- [ ] Make a website that shows the answers.
+- [x] Make a website that shows the answers.
 - [ ] Improve accuracy and add additional algorithms for searching.
 - [ ] Show percentages of answers/confidence to aid answering.
 - [ ] Show chat messages.
