@@ -10,6 +10,13 @@ DEPENDENCIES:
   - SwiftWebSocket
   - SwiftyJSON
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - KeychainSwift
+    - SwiftWebSocket
+    - SwiftyJSON
+
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
@@ -18,4 +25,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7e37992723b838ff66b0610543d2f4f19212faea
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

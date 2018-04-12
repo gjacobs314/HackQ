@@ -147,7 +147,6 @@
 				F8FB714A203B5304004F7787 /* Frameworks */,
 				F8FB714B203B5304004F7787 /* Resources */,
 				8E39A61C5DB09E3EF0402AE8 /* [CP] Embed Pods Frameworks */,
-				786D8DF84A21CD314CD07390 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,21 +212,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		786D8DF84A21CD314CD07390 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackQ/Pods-HackQ-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7F71DFB1CA4888C92CF8F302 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
