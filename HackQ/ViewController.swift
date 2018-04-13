@@ -11,6 +11,11 @@ import Alamofire
 import SwiftyJSON
 import SwiftWebSocket
 
+private let bearerTokenConstant = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE2MjQ3MTY0LCJ1c2VybmFtZSI6InNwYXo5MjYiLCJhdmF0YXJVcmwiOiJodHRwczovL2QyeHUxaGRvbWgzbnJ4LmNsb3VkZnJvbnQubmV0L2RlZmF1bHRfYXZhdGFycy9VbnRpdGxlZC0xXzAwMDJfcHVycGxlLnBuZyIsInRva2VuIjoiRGV5TTlVIiwicm9sZXMiOltdLCJjbGllbnQiOiJpT1MvMS4zLjIgYjg0IiwiZ3Vlc3RJZCI6bnVsbCwidiI6MSwiaWF0IjoxNTIzMzYxNDU0LCJleHAiOjE1MzExMzc0NTQsImlzcyI6Imh5cGVxdWl6LzEifQ.BaeVxMHb75GoQjsQWMwECO4GLu75pPygdoLIql3ohHk"
+private let userIDConstant = "16247164"
+private let googleSearchAPIKeyConstant = "AIzaSyBzVlcl79pu1ItkCLYqwe7_vjmGxG4tObE"
+private let googleSearchSearchEngineIDConstant = "004052065808184753945:elxpxzkusvs"
+
 class ViewController: NSViewController, NSTextFieldDelegate {
 
     /*
@@ -25,11 +30,6 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var answer2Label: NSTextField!
     @IBOutlet weak var answer3Label: NSTextField!
     @IBOutlet weak var bestAnswerLabel: NSTextField!
-    
-    private let bearerToken = "BEARER_TOKEN_HERE"
-    private let userID = "USER_ID"
-    private let googleSearchAPIKey = "GOOGLE_API_KEY"
-    private let googleSearchSearchEngineID = "GOOGLE_CSE_ID"
 
     let hqheaders : HTTPHeaders = [
         "x-hq-client": "iOS/1.2.17",
