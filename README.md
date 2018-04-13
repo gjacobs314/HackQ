@@ -20,7 +20,7 @@
 - Bearer Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExNjY0NTUzLCJ1c2VybmFtZSI6InRydW1wZnRxIiwiYXZhdGFyVXJsIjoiczM6Ly9oeXBlc3BhY2UtcXVpei9kZWZhdWx0X2F2YXRhcnMvVW50aXRsZWQtMV8wMDAxX2JsdWUucG5nIiwidG9rZW4iOm51bGwsInJvbGVzIjpbXSwiY2xpZW50IjoiIiwiZ3Vlc3RJZCI6bnVsbCwidiI6MSwiaWF0IjoxNTE5NTEyMTEyLCJleHAiOjE1MjcyODgxMTIsImlzcyI6Imh5cGVxdWl6LzEifQ.YxOrP_MnZTapJq5kZSmDd3MzG07W8ZeHcluI2l4cZWI
 - User ID: 11664553
 
-### Fill in info in lines 29, 30, 31, and 32 of ViewController.swift and lines 13 and 14 in SiteEncoding.swift
+### Fill in info in lines 14, 15, 16, and 17 of ViewController.swift and lines 13 and 14 in SiteEncoding.swift
 
 ## How it works:
 - Uses Alamofire to make a request to the host
