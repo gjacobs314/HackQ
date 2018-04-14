@@ -223,3 +223,6 @@ fastlane/report.xml
 fastlane/screenshots
 
 *.framework
+
+# Exclude real config file from source control
+Config.plist

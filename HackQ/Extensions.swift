@@ -148,12 +148,9 @@ extension Array where Element : StringProtocol
     }
 }
 
-//Quick formatting for decimal numbers
-extension CGFloat
-{
-    func format(f: String) -> String
-    {
-        return String(format: "%\(f)f", self)
+extension CGFloat {
+    func percentageRoundedTo(places: UInt) -> String {
+        return String(format: "%.\(places)f", self * 100)
     }
 }
 

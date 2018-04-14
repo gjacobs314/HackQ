@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0C5CFC2080136000D030F4 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C5CFB2080136000D030F4 /* Config.plist */; };
+		3F512831208236E400B79B1C /* Config-default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F512830208236E400B79B1C /* Config-default.plist */; };
 		D23C13D9D3BF3018377E6A9A /* Pods_HackQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */; };
 		F86D1F75203BB5CE00D01A65 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D1F74203BB5CE00D01A65 /* WindowController.swift */; };
 		F8BDF5F02040ED8100AE830A /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5EF2040ED8100AE830A /* Google.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0C5CFB2080136000D030F4 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		3F512830208236E400B79B1C /* Config-default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Config-default.plist"; sourceTree = "<group>"; };
 		7DBE5F04D00B4D86D163E186 /* Pods-HackQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackQ/Pods-HackQ.debug.xcconfig"; sourceTree = "<group>"; };
 		D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F396D168149D3C696E359D36 /* Pods-HackQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackQ/Pods-HackQ.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				F8FB7156203B5304004F7787 /* Main.storyboard */,
 				F8FB7159203B5304004F7787 /* Info.plist */,
 				F8FB7160203B54B5004F7787 /* Fonts */,
+				3F0C5CFB2080136000D030F4 /* Config.plist */,
+				3F512830208236E400B79B1C /* Config-default.plist */,
 			);
 			path = HackQ;
 			sourceTree = "<group>";
@@ -200,11 +206,13 @@
 				F8FB716C203B54BF004F7787 /* CircularStd-MediumItalic.otf in Resources */,
 				F8FB7155203B5304004F7787 /* Assets.xcassets in Resources */,
 				F8FB716F203B54BF004F7787 /* CircularStd-Black.otf in Resources */,
+				3F0C5CFC2080136000D030F4 /* Config.plist in Resources */,
 				F8FB7170203B54BF004F7787 /* CircularStd-BlackItalic.otf in Resources */,
 				F8FB716E203B54BF004F7787 /* CircularStd-Medium.otf in Resources */,
 				F8FB716D203B54BF004F7787 /* CircularStd-Book.otf in Resources */,
 				F8FB7169203B54BF004F7787 /* CircularStd-Bold.otf in Resources */,
 				F8FB7158203B5304004F7787 /* Main.storyboard in Resources */,
+				3F512831208236E400B79B1C /* Config-default.plist in Resources */,
 				F8FB716A203B54BF004F7787 /* CircularStd-BookItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

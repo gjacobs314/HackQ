@@ -26,6 +26,10 @@ struct Answer
         self.probability = probability
         self.others = others
     }
+    
+    static func format(answer: String, confidence: CGFloat) -> String {
+        return "\(answer) (\(confidence.percentageRoundedTo(places: 2))%"
+    }
 }
 
 class AnswerController

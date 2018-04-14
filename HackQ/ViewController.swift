@@ -12,21 +12,19 @@ import SwiftyJSON
 import SwiftWebSocket
 
 class ViewController: NSViewController, NSTextFieldDelegate {
-
-    /*
-    A Bearer token/user ID to use
+    @IBOutlet private weak var questionLabel: NSTextField!
+    @IBOutlet private weak var answer1Label: NSTextField!
+    @IBOutlet private weak var answer2Label: NSTextField!
+    @IBOutlet private weak var answer3Label: NSTextField!
+    @IBOutlet private weak var bestAnswerLabel: NSTextField!
     
-    Bearer Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDk4MDUzLCJ1c2VybmFtZSI6IjEyMzQ1Njc4OTEwMTEiLCJhdmF0YXJVcmwiOiJzMzovL2h5cGVzcGFjZS1xdWl6L2RlZmF1bHRfYXZhdGFycy9VbnRpdGxlZC0xXzAwMDRfZ29sZC5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiIiLCJndWVzdElkIjpudWxsLCJ2IjoxLCJpYXQiOjE1MTk1MTE5NTksImV4cCI6MTUyNzI4Nzk1OSwiaXNzIjoiaHlwZXF1aXovMSJ9.AoMWU1tj7w0KXYcrm0a8UwxjA0g_xuPehOAAMlPnWNY
-    User ID: 10098053
-    */
-
     private var answerLabels: [NSTextField] = []
 
     let hqheaders : HTTPHeaders = [
-        "x-hq-client": "iOS/1.2.17",
-        "Authorization": "Bearer BEARER_TOKEN_HERE",
+        "x-hq-client": Config.hqClient,
+        "Authorization": Config.bearerToken,
         "x-hq-stk": "MQ==",
-        "Host": "api-quiz.hype.space",
+        "Host": Config.hostURL,
         "Connection": "Keep-Alive",
         "Accept-Encoding": "gzip",
         "User-Agent": "okhttp/3.8.0"
@@ -43,18 +41,19 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         // Do any additional setup after loading the view.
         answerLabels = [answer1Label, answer2Label, answer3Label]
 
-        SiteEncoding.addGoogleAPICredentials(apiKeys: ["GOOGLE_API_KEY"], searchEngineID: "GOOGLE_CSE_ID")
+        SiteEncoding.addGoogleAPICredentials(apiKeys: [Config.googleAPIKey],
+                                             searchEngineID: Config.googleSearchEngineID)
 
         updateLabels()
         getSocketURL()
     }
 
     func getSocketURL() {
-        Alamofire.request("https://api-quiz.hype.space/shows/now?type=hq&userId=USER_ID", headers: hqheaders).responseJSON { response in
+        Alamofire.request("\(Config.hostFullURL)\(Config.userID)", headers: hqheaders).responseJSON { response in
             if let result = response.result.value {
                 let json = JSON(result)
                 let broadcast = json["broadcast"]
-
+                
                 if (broadcast != JSON.null) {
                     let secondjson = JSON(broadcast)
                     self.socketUrl = secondjson["socketUrl"].stringValue
@@ -78,10 +77,10 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     func openWebSocket() {
         var request = URLRequest(url: URL(string: socketUrl)!)
         request.timeoutInterval = 5
-        request.addValue("iOS/1.2.17", forHTTPHeaderField: "x-hq-client")
-        request.addValue("Bearer BEARER_TOKEN_HERE", forHTTPHeaderField: "Authorization")
+        request.addValue(Config.hqClient, forHTTPHeaderField: "x-hq-client")
+        request.addValue(Config.bearerToken, forHTTPHeaderField: "Authorization")
         request.addValue("MQ==", forHTTPHeaderField: "x-hq-stk")
-        request.addValue("api-quiz.hype.space", forHTTPHeaderField: "Host")
+        request.addValue(Config.hostURL, forHTTPHeaderField: "Host")
         request.addValue("Keep-Alive", forHTTPHeaderField: "Connection")
         request.addValue("gzip", forHTTPHeaderField: "Accept-Encoding")
         request.addValue("okhttp/3.8.0", forHTTPHeaderField: "User-Agent")

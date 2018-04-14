@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Google</key>
+	<dict>
+		<key>APIKey</key>
+		<string></string>
+		<key>SearchEngineID</key>
+		<string></string>
+	</dict>
+	<key>BearerToken</key>
+	<string>Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDk4MDUzLCJ1c2VybmFtZSI6IjEyMzQ1Njc4OTEwMTEiLCJhdmF0YXJVcmwiOiJzMzovL2h5cGVzcGFjZS1xdWl6L2RlZmF1bHRfYXZhdGFycy9VbnRpdGxlZC0xXzAwMDRfZ29sZC5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiIiLCJndWVzdElkIjpudWxsLCJ2IjoxLCJpYXQiOjE1MTk1MTE5NTksImV4cCI6MTUyNzI4Nzk1OSwiaXNzIjoiaHlwZXF1aXovMSJ9.AoMWU1tj7w0KXYcrm0a8UwxjA0g_xuPehOAAMlPnWNY</string>
+	<key>UserID</key>
+	<string>10098053</string>
+	<key>HostURL</key>
+	<string>api-quiz.hype.space</string>
+	<key>HostFullURL</key>
+	<string>https://api-quiz.hype.space/shows/now?type=hq&amp;userId=</string>
+	<key>HQClient</key>
+	<string>iOS/1.2.17</string>
+</dict>
+</plist>
