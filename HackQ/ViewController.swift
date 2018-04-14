@@ -20,11 +20,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     User ID: 10098053
     */
 
-    @IBOutlet weak var questionLabel: NSTextField!
-    @IBOutlet weak var answer1Label: NSTextField!
-    @IBOutlet weak var answer2Label: NSTextField!
-    @IBOutlet weak var answer3Label: NSTextField!
-    @IBOutlet weak var bestAnswerLabel: NSTextField!
+    private var answerLabels: [NSTextField] = []
 
     let hqheaders : HTTPHeaders = [
         "x-hq-client": "iOS/1.2.17",
@@ -37,15 +33,15 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     ]
 
     var socketUrl : String = "https://socketUrl"
-    var question : String = "Question"
-    var answer1 : String = "Answer 1"
-    var answer2 : String = "Answer 2"
-    var answer3 : String = "Answer 3"
-    var bestAnswer : String = "Best answer"
+    
+    private var question : String = "Question"
+    private var answers: [String] = ["Answer 1", "Answer 2", "Answer 3"]
+    private var bestAnswer : String = "Best answer"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        answerLabels = [answer1Label, answer2Label, answer3Label]
 
         SiteEncoding.addGoogleAPICredentials(apiKeys: ["GOOGLE_API_KEY"], searchEngineID: "GOOGLE_CSE_ID")
 
@@ -69,6 +65,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                     self.socketUrl = replacedSocketUrl
                     print(self.socketUrl)
                     print("-----")
+                } else {
+                    print("No socket available. The game is not live.")
+                    return
                 }
             }
 
@@ -104,11 +103,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 let receivedAsJSON = try! JSONSerialization.jsonObject(with: data) as? [String: Any],
                 let type = receivedAsJSON["type"] as? String {
 
-                print("Message received: \(receivedString)")
-                print("-----")
-
                 if (type == "question") {
                     let json = JSON(receivedAsJSON)
+                    
                     let receivedQuestion = json["question"].stringValue
                     self.question = receivedQuestion
                     print(self.question)
@@ -124,25 +121,14 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                         print(answer)
                         print("-----")
                     }
-
-                    let firstJSON = JSON((answersArray.first)!)
-                    let firstText = firstJSON["text"].stringValue
-                    print("First value in array: " + firstText)
-                    print("-----")
-                    self.answer1 = firstText
-
-                    let middleJSON = JSON(answersArray[1])
-                    let middleText = middleJSON["text"].stringValue
-                    print("Second value in array: " + middleText)
-                    print("-----")
-                    self.answer2 = middleText
-
-                    let lastJSON = JSON((answersArray.last)!)
-                    let lastText = lastJSON["text"].stringValue
-                    print("Last value in array: " + lastText)
-                    print("-----")
-                    self.answer3 = lastText
-
+                    
+                    for (index, jsonAnwser) in answersArray.enumerated() {
+                        let answerText = jsonAnwser["text"].stringValue
+                        print("#\(index+1) value in array: " + answerText)
+                        print("-----")
+                        self.answers[index] = answerText
+                    }
+                    
                     self.getMatches()
 
                     self.updateLabels()
@@ -163,23 +149,33 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     ///Retrieves the correct answer
     private func getMatches()
     {
-        let options = [answer1, answer2, answer3]
-        AnswerController.answer(for: question, answers: options) { answer in
-
-            print("Predicted correct answer: \(answer.correctAnswer)")
+        AnswerController.answer(for: question, answers: answers) { answer in
+            let correctFormattedAnswer = Answer.format(answer: answer.correctAnswer, confidence: answer.probability)
+            print("Predicted correct answer: \(correctFormattedAnswer) confidence)")
             print("-----")
-
-            self.bestAnswer = answer.correctAnswer
-
+            
+            for (index, ans) in self.answers.enumerated() {
+                if ans == answer.correctAnswer {
+                    self.answers[index] = correctFormattedAnswer + ")"
+                    self.bestAnswer = correctFormattedAnswer + " confidence)"
+                } else {
+                    if let otherAnswer = answer.others.filter({ $0.0 == ans }).first {
+                        self.answers[index] = Answer.format(answer: otherAnswer.0, confidence: otherAnswer.1) + ")"
+                    }
+                }
+            }
+            
             self.updateLabels()
         }
     }
 
     func updateLabels() {
         questionLabel.stringValue = self.question
-        answer1Label.stringValue = self.answer1
-        answer2Label.stringValue = self.answer2
-        answer3Label.stringValue = self.answer3
+        
+        for (index, label) in answerLabels.enumerated() {
+            label.stringValue = self.answers[index]
+        }
+        
         bestAnswerLabel.stringValue = self.bestAnswer
     }
 
