@@ -28,7 +28,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     private var fixedLabels: [NSTextField] = []
     private var answerLabels: [NSTextField] = []
 
-    let hqheaders : HTTPHeaders = [
+    private let hqheaders : HTTPHeaders = [
         "x-hq-client": Config.hqClient,
         "Authorization": Config.bearerToken,
         "x-hq-stk": "MQ==",
@@ -38,7 +38,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         "User-Agent": "okhttp/3.8.0"
     ]
 
-    var socketUrl = "https://socketUrl"
+    private var socketUrl = "https://socketUrl"
     
     private var question = "Question"
     private var questionCount: UInt = 0
@@ -187,7 +187,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             return
         }
         
-        nextGameLabel.isHidden = state
+        nextGameLabel.isHidden = true
         nextGameInfoLabel.isHidden = state
     }
     
