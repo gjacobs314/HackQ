@@ -328,3 +328,28 @@ extension String
         return fixedText.trimmingCharacters(in: legalCharacters)
     }
 }
+
+private var rfc3339formatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
+    formatter.timeZone = TimeZone(secondsFromGMT: 0)
+    formatter.calendar = Calendar(identifier: Calendar.Identifier.iso8601)
+    formatter.locale = Locale(identifier: "en_US_POSIX")
+    
+    return formatter
+}()
+
+
+extension Date {
+    var stringFormattedAsRFC3339: String {
+        return rfc3339formatter.string(from: self)
+    }
+    
+    init? (RFC3339FormattedString: String) {
+        if let date = rfc3339formatter.date(from: RFC3339FormattedString) {
+            self.init(timeInterval:0, since: date)
+        } else {
+            return nil
+        }
+    }
+}

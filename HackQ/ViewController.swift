@@ -12,12 +12,20 @@ import SwiftyJSON
 import SwiftWebSocket
 
 class ViewController: NSViewController, NSTextFieldDelegate {
+    @IBOutlet weak var nextGameLabel: NSTextField!
+    @IBOutlet weak var nextGameInfoLabel: NSTextField!
+    @IBOutlet private weak var fixedQuestionLabel: NSTextField!
+    @IBOutlet private weak var fixedAnswer1Label: NSTextField!
+    @IBOutlet private weak var fixedAnswer2Label: NSTextField!
+    @IBOutlet private weak var fixedAnswer3Label: NSTextField!
+    @IBOutlet private weak var fixedBestAnswerLabel: NSTextField!
     @IBOutlet private weak var questionLabel: NSTextField!
     @IBOutlet private weak var answer1Label: NSTextField!
     @IBOutlet private weak var answer2Label: NSTextField!
     @IBOutlet private weak var answer3Label: NSTextField!
     @IBOutlet private weak var bestAnswerLabel: NSTextField!
     
+    private var fixedLabels: [NSTextField] = []
     private var answerLabels: [NSTextField] = []
 
     let hqheaders : HTTPHeaders = [
@@ -30,15 +38,16 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         "User-Agent": "okhttp/3.8.0"
     ]
 
-    var socketUrl : String = "https://socketUrl"
+    var socketUrl = "https://socketUrl"
     
-    private var question : String = "Question"
-    private var answers: [String] = ["Answer 1", "Answer 2", "Answer 3"]
-    private var bestAnswer : String = "Best answer"
+    private var question = "Question"
+    private var questionCount: UInt = 0
+    private var answers = ["Answer 1", "Answer 2", "Answer 3"]
+    private var bestAnswer = "Best answer"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        fixedLabels = [fixedQuestionLabel, fixedAnswer1Label, fixedAnswer2Label, fixedAnswer3Label, fixedBestAnswerLabel]
         answerLabels = [answer1Label, answer2Label, answer3Label]
 
         SiteEncoding.addGoogleAPICredentials(apiKeys: [Config.googleAPIKey],
@@ -55,17 +64,31 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 let broadcast = json["broadcast"]
                 
                 if (broadcast != JSON.null) {
-                    let secondjson = JSON(broadcast)
-                    self.socketUrl = secondjson["socketUrl"].stringValue
+                    print("Game is live!")
+                    self.showQuestionsAndAnswers()
+                    
+                    self.socketUrl = JSON(broadcast)["socketUrl"].stringValue
                     print(self.socketUrl)
                     print("-----")
 
-                    let replacedSocketUrl = self.socketUrl.replacingOccurrences(of: "https", with: "wss")
-                    self.socketUrl = replacedSocketUrl
+                    self.socketUrl = self.socketUrl.replacingOccurrences(of: "https", with: "wss")
                     print(self.socketUrl)
                     print("-----")
                 } else {
                     print("No socket available. The game is not live.")
+                    let prize = json["nextShowPrize"].stringValue
+                    let showTime = Date(RFC3339FormattedString: json["nextShowTime"].stringValue)!
+                    
+                    let formatter = DateFormatter()
+                    formatter.dateStyle = .medium
+                    formatter.timeStyle = .short
+                    formatter.doesRelativeDateFormatting = true
+                    
+                    let prettyShowTime = formatter.string(from: showTime)
+                    
+                    self.nextGameInfoLabel.stringValue = "\(prettyShowTime)\n\(prize) prize"
+                    self.toggleNextGameInfo(true)
+
                     return
                 }
             }
@@ -101,38 +124,27 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 let data = receivedString.data(using: .utf8),
                 let receivedAsJSON = try! JSONSerialization.jsonObject(with: data) as? [String: Any],
                 let type = receivedAsJSON["type"] as? String {
-
+                
                 if (type == "question") {
+                    self.questionCount += 1
                     let json = JSON(receivedAsJSON)
                     
                     let receivedQuestion = json["question"].stringValue
+                    self.fixedQuestionLabel.stringValue = "Question \(self.questionCount):"
                     self.question = receivedQuestion
                     print(self.question)
-                    print("-----")
-
-                    let answersArray = json["answers"].arrayValue
-                    print(answersArray)
-                    print("-----")
-
-                    let answersJSONArray = JSON(answersArray)
-                    for (_, object) in answersJSONArray {
-                        let answer = object["text"].stringValue
-                        print(answer)
-                        print("-----")
-                    }
                     
-                    for (index, jsonAnwser) in answersArray.enumerated() {
-                        let answerText = jsonAnwser["text"].stringValue
-                        print("#\(index+1) value in array: " + answerText)
-                        print("-----")
+                    for (index, jsonAnswer) in json["answers"].arrayValue.enumerated() {
+                        let answerText = jsonAnswer["text"].stringValue
+                        print("Answer #\(index+1): " + answerText)
                         self.answers[index] = answerText
                     }
                     
                     self.getMatches()
-
+                    
                     self.updateLabels()
                 }
-
+                
                 if (type == "broadcastEnded") {
                     self.openWebSocket()
                 }
@@ -167,6 +179,31 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             self.updateLabels()
         }
     }
+    
+    func toggleNextGameInfo(_ state: Bool) {
+        if state {
+            nextGameLabel.isHidden = !state
+            nextGameInfoLabel.isHidden = false
+            return
+        }
+        
+        nextGameLabel.isHidden = state
+        nextGameInfoLabel.isHidden = state
+    }
+    
+    func showQuestionsAndAnswers() {
+        NSAnimationContext.runAnimationGroup({ _ in
+            NSAnimationContext.current.duration = 2.0
+            self.nextGameInfoLabel.animator().alphaValue = 0.0
+        }, completionHandler: {
+            self.toggleNextGameInfo(false)
+            
+            self.questionLabel.isHidden = !self.questionLabel.isHidden
+            self.fixedLabels.forEach { $0.isHidden = !$0.isHidden }
+            self.answerLabels.forEach { $0.isHidden = !$0.isHidden }
+            self.bestAnswerLabel.isHidden = !self.bestAnswerLabel.isHidden
+        })
+    }
 
     func updateLabels() {
         questionLabel.stringValue = self.question
@@ -176,11 +213,5 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         }
         
         bestAnswerLabel.stringValue = self.bestAnswer
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
     }
 }
