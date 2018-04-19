@@ -10,9 +10,6 @@ import Foundation
 import Cocoa
 import KeychainSwift
 
-private let googleSearchAPIKeyConstant = "GOOGLE_API_KEY"
-private let googleSearchSearchEngineIDConstant = "GOOGLE_CSE_ID"
-
 /**
  Determines what site will be searched for answers
 
@@ -49,7 +46,7 @@ struct SiteEncoding : Equatable, CustomStringConvertible, CustomDebugStringConve
             var queryItems = (components.queryItems ?? []) + [URLQueryItem(name: "q", value: urlEncoded)]
             var keys = [String]()
             var count = 0
-            while let apiKey = SiteEncoding.keychain.get(googleSearchAPIKeyConstant + "\(count == 0 ? "" : "\(count)")")
+            while let apiKey = SiteEncoding.keychain.get(googleAPIKeyConstant + "\(count == 0 ? "" : "\(count)")")
             {
                 keys.append(apiKey)
                 count += 1
@@ -72,7 +69,7 @@ struct SiteEncoding : Equatable, CustomStringConvertible, CustomDebugStringConve
     }
 
     static let google : SiteEncoding = {
-        guard let apiKey = keychain.get(googleSearchAPIKeyConstant), let searchEngineID = keychain.get(googleSearchSearchEngineIDConstant) else
+        guard let apiKey = keychain.get(googleAPIKeyConstant), let searchEngineID = keychain.get(googleCSEKeyConstant) else
         {
             return SiteEncoding(name: "Invalid Google Search.  Missing API Key or SearchEngineID", url: nil)
         }
@@ -86,9 +83,9 @@ struct SiteEncoding : Equatable, CustomStringConvertible, CustomDebugStringConve
         var count = 0
         for apiKey in apiKeys where apiKey != ""
         {
-            keychain.set(apiKey, forKey: googleSearchAPIKeyConstant + "\(count == 0 ? "" : "\(count)")")
+            keychain.set(apiKey, forKey: googleAPIKeyConstant + "\(count == 0 ? "" : "\(count)")")
             count += 1
         }
-        keychain.set(searchEngineID, forKey: googleSearchSearchEngineIDConstant)
+        keychain.set(searchEngineID, forKey: googleCSEKeyConstant)
     }
 }
