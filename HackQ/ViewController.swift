@@ -12,7 +12,7 @@ import SwiftyJSON
 import SwiftWebSocket
 
 class ViewController: NSViewController, NSTextFieldDelegate {
-    @IBOutlet weak var nextGameLabel: NSTextField!
+    @IBOutlet weak var gameAndQuestionsInfoLabel: NSTextField!
     @IBOutlet weak var nextGameInfoLabel: NSTextField!
     @IBOutlet private weak var fixedQuestionLabel: NSTextField!
     @IBOutlet private weak var fixedAnswer1Label: NSTextField!
@@ -27,8 +27,8 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     private var fixedLabels: [NSTextField] = []
     private var answerLabels: [NSTextField] = []
-
-    private let hqheaders : HTTPHeaders = [
+    
+    private let hqheaders: HTTPHeaders = [
         "x-hq-client": Config.hqClient,
         "Authorization": Config.bearerToken,
         "x-hq-stk": "MQ==",
@@ -37,26 +37,28 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         "Accept-Encoding": "gzip",
         "User-Agent": "okhttp/3.8.0"
     ]
-
+    
     private var socketUrl = "https://socketUrl"
     
-    private var question = "Question"
-    private var questionCount: UInt = 0
-    private var answers = ["Answer 1", "Answer 2", "Answer 3"]
-    private var bestAnswer = "Best answer"
-
+    private var isGameLive: Bool {
+        return socketUrl.hasPrefix("wss")
+    }
+    
+    private var currentQuestion: Question?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fixedLabels = [fixedQuestionLabel, fixedAnswer1Label, fixedAnswer2Label, fixedAnswer3Label, fixedBestAnswerLabel]
         answerLabels = [answer1Label, answer2Label, answer3Label]
-
+        
         SiteEncoding.addGoogleAPICredentials(apiKeys: [Config.googleAPIKey],
                                              searchEngineID: Config.googleSearchEngineID)
 
-        updateLabels()
+        updateQuestionsAndAnswersLabels()
+
         getSocketURL()
     }
-
+    
     func getSocketURL() {
         Alamofire.request("\(Config.hostFullURL)\(Config.userID)", headers: hqheaders).responseJSON { response in
             if let result = response.result.value {
@@ -70,7 +72,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                     self.socketUrl = JSON(broadcast)["socketUrl"].stringValue
                     print(self.socketUrl)
                     print("-----")
-
+                    
                     self.socketUrl = self.socketUrl.replacingOccurrences(of: "https", with: "wss")
                     print(self.socketUrl)
                     print("-----")
@@ -87,16 +89,16 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                     let prettyShowTime = formatter.string(from: showTime)
                     
                     self.nextGameInfoLabel.stringValue = "\(prettyShowTime)\n\(prize) prize"
-                    self.toggleNextGameInfo(true)
-
+                    self.showNextGameInfo(true)
+                    
                     return
                 }
             }
-
+            
             self.openWebSocket()
         }
     }
-
+    
     func openWebSocket() {
         var request = URLRequest(url: URL(string: socketUrl)!)
         request.timeoutInterval = 5
@@ -108,17 +110,17 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         request.addValue("gzip", forHTTPHeaderField: "Accept-Encoding")
         request.addValue("okhttp/3.8.0", forHTTPHeaderField: "User-Agent")
         let ws = WebSocket(request: request)
-
+        
         ws.event.open = {
             print("Opened web socket.")
             print("-----")
         }
-
+        
         ws.event.error = { error in
             print("Error: \(error)")
             print("-----")
         }
-
+        
         ws.event.message = { message in
             if let receivedString = message as? String,
                 let data = receivedString.data(using: .utf8),
@@ -126,23 +128,12 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 let type = receivedAsJSON["type"] as? String {
                 
                 if (type == "question") {
-                    self.questionCount += 1
-                    let json = JSON(receivedAsJSON)
-                    
-                    let receivedQuestion = json["question"].stringValue
-                    self.fixedQuestionLabel.stringValue = "Question \(self.questionCount):"
-                    self.question = receivedQuestion
-                    print(self.question)
-                    
-                    for (index, jsonAnswer) in json["answers"].arrayValue.enumerated() {
-                        let answerText = jsonAnswer["text"].stringValue
-                        print("Answer #\(index+1): " + answerText)
-                        self.answers[index] = answerText
-                    }
+                    self.currentQuestion = Question(json: JSON(receivedAsJSON))
+                    print(String(describing: self.currentQuestion))
                     
                     self.getMatches()
                     
-                    self.updateLabels()
+                    self.updateQuestionsAndAnswersLabels()
                 }
                 
                 if (type == "broadcastEnded") {
@@ -151,52 +142,38 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             }
         }
     }
-
+    
     @IBAction func openSocket(_ sender: Any) {
         getSocketURL()
         openWebSocket()
     }
-
+    
     ///Retrieves the correct answer
     private func getMatches()
     {
-        AnswerController.answer(for: question, answers: answers) { answer in
+        AnswerController.answer(for: currentQuestion!.text, answers: currentQuestion!.possibleAnswers) { answer in
             let correctFormattedAnswer = Answer.format(answer: answer.correctAnswer, confidence: answer.probability)
             print("Predicted correct answer: \(correctFormattedAnswer) confidence)")
             print("-----")
-            
-            for (index, ans) in self.answers.enumerated() {
-                if ans == answer.correctAnswer {
-                    self.answers[index] = correctFormattedAnswer + ")"
-                    self.bestAnswer = correctFormattedAnswer + " confidence)"
-                } else {
-                    if let otherAnswer = answer.others.filter({ $0.0 == ans }).first {
-                        self.answers[index] = Answer.format(answer: otherAnswer.0, confidence: otherAnswer.1) + ")"
-                    }
-                }
-            }
-            
-            self.updateLabels()
+            self.currentQuestion?.searchedAnswers = answer
+            self.updateQuestionsAndAnswersLabels()
         }
     }
     
-    func toggleNextGameInfo(_ state: Bool) {
-        if state {
-            nextGameLabel.isHidden = !state
-            nextGameInfoLabel.isHidden = false
-            return
-        }
-        
-        nextGameLabel.isHidden = true
-        nextGameInfoLabel.isHidden = state
+    func showNextGameInfo(_ state: Bool) {
+        gameAndQuestionsInfoLabel.isHidden = false
+        nextGameInfoLabel.isHidden = !state
     }
     
     func showQuestionsAndAnswers() {
         NSAnimationContext.runAnimationGroup({ _ in
             NSAnimationContext.current.duration = 2.0
             self.nextGameInfoLabel.animator().alphaValue = 0.0
+            self.gameAndQuestionsInfoLabel.animator().alphaValue = 0.0
         }, completionHandler: {
-            self.toggleNextGameInfo(false)
+            self.showNextGameInfo(false)
+            self.updateGameAndQuestionsInfoLabel()
+            self.gameAndQuestionsInfoLabel.animator().alphaValue = 1.0
             
             self.questionLabel.isHidden = !self.questionLabel.isHidden
             self.fixedLabels.forEach { $0.isHidden = !$0.isHidden }
@@ -204,14 +181,44 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             self.bestAnswerLabel.isHidden = !self.bestAnswerLabel.isHidden
         })
     }
-
-    func updateLabels() {
-        questionLabel.stringValue = self.question
+    
+    func updateGameAndQuestionsInfoLabel() {
+        if isGameLive {
+            gameAndQuestionsInfoLabel.stringValue = currentQuestion != nil ?
+                "QUESTION \(currentQuestion!.number) OF \(currentQuestion!.totalCount)" :
+            "WAITING FOR QUESTIONS"
+        } else {
+            gameAndQuestionsInfoLabel.stringValue = "NEXT GAME"
+        }
+    }
+    
+    func updateQuestionsAndAnswersLabels() {
+        updateGameAndQuestionsInfoLabel()
         
-        for (index, label) in answerLabels.enumerated() {
-            label.stringValue = self.answers[index]
+        if let answer = currentQuestion?.searchedAnswers {
+            // Labels are already populated, just show confidence values and best answer after searching
+            let correctFormattedAnswer = Answer.format(answer: answer.correctAnswer, confidence: answer.probability)
+            for (index, ans) in self.currentQuestion!.possibleAnswers.enumerated() {
+                if ans == answer.correctAnswer {
+                    self.answerLabels[index].stringValue = correctFormattedAnswer + ")"
+                } else {
+                    if let otherAnswer = answer.others.filter({ $0.0 == ans }).first {
+                        self.answerLabels[index].stringValue = Answer.format(answer: otherAnswer.0, confidence: otherAnswer.1) + ")"
+                    }
+                }
+            }
+            
+            bestAnswerLabel.stringValue = correctFormattedAnswer + " confidence)"
+        } else {
+            // New question, not searched yet
+            questionLabel.stringValue = currentQuestion?.text ?? "Question"
+            
+            for (index, label) in answerLabels.enumerated() {
+                label.stringValue = currentQuestion?.possibleAnswers[index] ?? "Answer \(index+1)"
+            }
+            
+            bestAnswerLabel.stringValue = "Best Answer"
         }
         
-        bestAnswerLabel.stringValue = self.bestAnswer
     }
 }

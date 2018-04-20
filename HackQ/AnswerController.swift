@@ -28,7 +28,7 @@ struct Answer
     }
     
     static func format(answer: String, confidence: CGFloat) -> String {
-        return "\(answer) (\(confidence.percentageRoundedTo(places: 2))%"
+        return "\(answer) (\(confidence.percentageRoundedTo(places: 1))%"
     }
 }
 
