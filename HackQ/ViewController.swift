@@ -198,11 +198,12 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         if let answer = currentQuestion?.searchedAnswers {
             // Labels are already populated, just show confidence values and best answer after searching
             let correctFormattedAnswer = Answer.format(answer: answer.correctAnswer, confidence: answer.probability)
-            for (index, ans) in self.currentQuestion!.possibleAnswers.enumerated() {
-                if ans == answer.correctAnswer {
+            
+            for (index, label) in answerLabels.enumerated() {
+                if label.stringValue == answer.correctAnswer {
                     self.answerLabels[index].stringValue = correctFormattedAnswer + ")"
                 } else {
-                    if let otherAnswer = answer.others.filter({ $0.0 == ans }).first {
+                    if let otherAnswer = answer.others.filter({ $0.0 == label.stringValue }).first {
                         self.answerLabels[index].stringValue = Answer.format(answer: otherAnswer.0, confidence: otherAnswer.1) + ")"
                     }
                 }

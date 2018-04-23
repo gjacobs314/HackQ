@@ -281,10 +281,6 @@ extension String
                         let temp = word.replacingOccurrences(of: ".", with: "")
                         words[i] = temp
                     }
-                    else
-                    {
-                        words[i] = "intext:\(word) "
-                    }
                 }
                 fixed = words.joined(separator: " ")
             }
