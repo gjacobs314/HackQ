@@ -8,30 +8,6 @@
 
 import AppKit
 
-/**
- Stores information about each answer and its probability of being the correct answer
-
- The most probable answer is stored separately for more explicit and quicker recall
- */
-struct Answer
-{
-    let correctAnswer : String
-    let probability : CGFloat
-
-    let others : [(String, CGFloat)]
-
-    init(correctAnswer: String, probability: CGFloat, others: [(String, CGFloat)])
-    {
-        self.correctAnswer = correctAnswer
-        self.probability = probability
-        self.others = others
-    }
-    
-    static func format(answer: String, confidence: CGFloat) -> String {
-        return "\(answer) (\(confidence.percentageRoundedTo(places: 1))%"
-    }
-}
-
 class AnswerController
 {
     private static let questionTypes : [QuestionType] = [.not, .definition, .otherTwo, .whichOfThese, .midWhich, .correctSpelling, .whose, .who, .howMany, .startsWhich, .isWhat, .startWhat, .endWhat, .midWhat, .whereIs, .other]
@@ -43,45 +19,40 @@ class AnswerController
      - Parameter completion: A closure accepting the correct answer
      - Parameter answer: An instance on `Answer` containing the correct answer and probabilities for all 3 answers
      */
-    static func answer(for question: String, answers: [String], completion: @escaping (_ answer: Answer) -> ())
-    {
+    static func answer(for question: String, answers: [AnswerText], completion: @escaping (_ answers: [AnswerProb]) -> ()) {
         let questionType = type(forQuestion: question)
+        let textAnswers = answers.compactMap { $0.text }
+        var answersProbability: [AnswerProb] = []
 
-        func processAnswer(for matches: AnswerCounts)
-        {
-            let largestMatch = matches.largest
-            let sum : Int = matches.sumOfResults
-            var others = [(String, CGFloat)]()
-            if sum == 0
-            {
-                completion(Answer(correctAnswer: "", probability: 0.0, others: []))
+        func processAnswer(for matches: AnswerCounts) {
+            let sum: Int = matches.sumOfResults
+            if sum == 0 {
+                completion([])
             }
-            else
-            {
-                for match in matches.dump where match.0 != largestMatch.0
-                {
-                    others.append((match.0, CGFloat(match.1) / CGFloat(sum)))
+            else {
+                for match in matches.dump {
+                    let answer = answers.filter { $0.text == match.0 }.first!
+                    let probability = Float(match.1) / Float(sum)
+                    answersProbability.append((id: answer.id, probability: probability))
                 }
-                completion(Answer(correctAnswer: largestMatch.0, probability: CGFloat(largestMatch.1) / CGFloat(sum), others: others))
+                
+                completion(answersProbability)
             }
-
         }
 
-        switch questionType.searchFunctionCode
-        {
+        switch questionType.searchFunctionCode {
         case 5, 7, 3:
             //Questions that include "not", questions that are spelling questions, and questions that ask "which of these" cannot be easily answered, and thus require more precise processing
-            matches(for: question, answers: answers) { matches in
+            matches(for: question, answers: textAnswers) { matches in
                 processAnswer(for: matches)
             }
 
         default:
             //For everything else, questions have the potential to be answered without needing precision
-            Google.matches(for: question, including: answers) { matches in
-                guard matches.count != 1, matches.largest.1 > 0 else
-                {
+            Google.matches(for: question, including: textAnswers) { matches in
+                guard matches.count != 1, matches.largest.1 > 0 else {
                     //We need precision anyways since the imprecise didn't give us enough accuracy
-                    AnswerController.matches(for: question, answers: answers) { matches in
+                    AnswerController.matches(for: question, answers: textAnswers) { matches in
                         processAnswer(for: matches)
                     }
                     return

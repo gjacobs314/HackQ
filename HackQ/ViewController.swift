@@ -12,8 +12,8 @@ import SwiftyJSON
 import SwiftWebSocket
 
 class ViewController: NSViewController, NSTextFieldDelegate {
-    @IBOutlet weak var gameAndQuestionsInfoLabel: NSTextField!
-    @IBOutlet weak var nextGameInfoLabel: NSTextField!
+    @IBOutlet private weak var gameAndQuestionsInfoLabel: NSTextField!
+    @IBOutlet private weak var nextGameInfoLabel: NSTextField!
     @IBOutlet private weak var fixedQuestionLabel: NSTextField!
     @IBOutlet private weak var fixedAnswer1Label: NSTextField!
     @IBOutlet private weak var fixedAnswer2Label: NSTextField!
@@ -132,7 +132,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                     print(String(describing: self.currentQuestion))
                     
                     self.getMatches()
-                    
+                
                     self.updateQuestionsAndAnswersLabels()
                 }
                 
@@ -151,11 +151,11 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     ///Retrieves the correct answer
     private func getMatches()
     {
-        AnswerController.answer(for: currentQuestion!.text, answers: currentQuestion!.possibleAnswers) { answer in
-            let correctFormattedAnswer = Answer.format(answer: answer.correctAnswer, confidence: answer.probability)
-            print("Predicted correct answer: \(correctFormattedAnswer) confidence)")
-            print("-----")
-            self.currentQuestion?.searchedAnswers = answer
+        let answers = currentQuestion!.answers.compactMap { ($0.id, $0.text ) }
+        AnswerController.answer(for: currentQuestion!.text, answers: answers) { ans in
+            self.currentQuestion?.hasSearchCompleted = true
+            ans.forEach { self.currentQuestion?.answers[$0.id]?.updateProbability(prob: $0.probability) }
+            
             self.updateQuestionsAndAnswersLabels()
         }
     }
@@ -195,31 +195,24 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     func updateQuestionsAndAnswersLabels() {
         updateGameAndQuestionsInfoLabel()
         
-        if let answer = currentQuestion?.searchedAnswers {
-            // Labels are already populated, just show confidence values and best answer after searching
-            let correctFormattedAnswer = Answer.format(answer: answer.correctAnswer, confidence: answer.probability)
+        if let answers = currentQuestion?.answers, let completed = currentQuestion?.hasSearchCompleted, completed {
+            let formattedAnswers = answers.compactMap { String(describing: $0) }
+            print(formattedAnswers)
             
             for (index, label) in answerLabels.enumerated() {
-                if label.stringValue == answer.correctAnswer {
-                    self.answerLabels[index].stringValue = correctFormattedAnswer + ")"
-                } else {
-                    if let otherAnswer = answer.others.filter({ $0.0 == label.stringValue }).first {
-                        self.answerLabels[index].stringValue = Answer.format(answer: otherAnswer.0, confidence: otherAnswer.1) + ")"
-                    }
-                }
+                label.stringValue = formattedAnswers[index]
             }
             
-            bestAnswerLabel.stringValue = correctFormattedAnswer + " confidence)"
+            bestAnswerLabel.stringValue = answers.highest!.text + " (\(answers.highest!.probability.rounded)% confidence)"
         } else {
             // New question, not searched yet
             questionLabel.stringValue = currentQuestion?.text ?? "Question"
             
             for (index, label) in answerLabels.enumerated() {
-                label.stringValue = currentQuestion?.possibleAnswers[index] ?? "Answer \(index+1)"
+                label.stringValue = currentQuestion?.answers[index].text ?? "Answer \(index+1)"
             }
             
             bestAnswerLabel.stringValue = "Best Answer"
         }
-        
     }
 }

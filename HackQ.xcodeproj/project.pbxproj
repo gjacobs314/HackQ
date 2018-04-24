@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3F0C5CFC2080136000D030F4 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C5CFB2080136000D030F4 /* Config.plist */; };
 		3F270606208A65AE00B37FB0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F270605208A65AE00B37FB0 /* Question.swift */; };
-		3F36C770208A3321002A7D5C /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F36C76F208A3321002A7D5C /* questions.json */; };
 		3F512831208236E400B79B1C /* Config-default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F512830208236E400B79B1C /* Config-default.plist */; };
 		3F517941208A24DC0025AF9F /* AnswerControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F517940208A24DC0025AF9F /* AnswerControllerTest.swift */; };
 		3F517948208A25B00025AF9F /* AnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5F12040ED9F00AE830A /* AnswerController.swift */; };
@@ -18,6 +17,10 @@
 		3F51794B208A25BC0025AF9F /* SiteEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5F92040EE8B00AE830A /* SiteEncoding.swift */; };
 		3F51794C208A25C20025AF9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5F52040EE0500AE830A /* Extensions.swift */; };
 		3F51794D208A25C90025AF9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB7150203B5304004F7787 /* AppDelegate.swift */; };
+		3FE9730C208E8629000E1FF2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9730B208E8629000E1FF2 /* Answer.swift */; };
+		3FE9730D208E8629000E1FF2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9730B208E8629000E1FF2 /* Answer.swift */; };
+		3FE9730E208EBF86000E1FF2 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F36C76F208A3321002A7D5C /* questions.json */; };
+		3FE9730F208EBF88000E1FF2 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F36C76F208A3321002A7D5C /* questions.json */; };
 		D23C13D9D3BF3018377E6A9A /* Pods_HackQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */; };
 		F86D1F75203BB5CE00D01A65 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D1F74203BB5CE00D01A65 /* WindowController.swift */; };
 		F8BDF5F02040ED8100AE830A /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5EF2040ED8100AE830A /* Google.swift */; };
@@ -57,6 +60,7 @@
 		3F51793E208A24DC0025AF9F /* HackQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F517940208A24DC0025AF9F /* AnswerControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerControllerTest.swift; sourceTree = "<group>"; };
 		3F517942208A24DC0025AF9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FE9730B208E8629000E1FF2 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		7DBE5F04D00B4D86D163E186 /* Pods-HackQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackQ/Pods-HackQ.debug.xcconfig"; sourceTree = "<group>"; };
 		D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F396D168149D3C696E359D36 /* Pods-HackQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackQ/Pods-HackQ.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +115,15 @@
 			path = HackQTests;
 			sourceTree = "<group>";
 		};
+		3FE9730A208E8605000E1FF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F270605208A65AE00B37FB0 /* Question.swift */,
+				3FE9730B208E8629000E1FF2 /* Answer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5194F208AE48B23DB6B0059C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,11 +164,11 @@
 		F8FB714F203B5304004F7787 /* HackQ */ = {
 			isa = PBXGroup;
 			children = (
+				3FE9730A208E8605000E1FF2 /* Model */,
 				F8FB7150203B5304004F7787 /* AppDelegate.swift */,
 				F8FB7152203B5304004F7787 /* ViewController.swift */,
 				F86D1F74203BB5CE00D01A65 /* WindowController.swift */,
 				F8BDF5EF2040ED8100AE830A /* Google.swift */,
-				3F270605208A65AE00B37FB0 /* Question.swift */,
 				F8BDF5F12040ED9F00AE830A /* AnswerController.swift */,
 				F8BDF5F52040EE0500AE830A /* Extensions.swift */,
 				F8BDF5F72040EE6700AE830A /* QuestionType.swift */,
@@ -270,7 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F36C770208A3321002A7D5C /* questions.json in Resources */,
+				3FE9730F208EBF88000E1FF2 /* questions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +293,7 @@
 			files = (
 				F8FB716B203B54BF004F7787 /* CircularStd-BoldItalic.otf in Resources */,
 				F8FB716C203B54BF004F7787 /* CircularStd-MediumItalic.otf in Resources */,
+				3FE9730E208EBF86000E1FF2 /* questions.json in Resources */,
 				F8FB7155203B5304004F7787 /* Assets.xcassets in Resources */,
 				F8FB716F203B54BF004F7787 /* CircularStd-Black.otf in Resources */,
 				3F0C5CFC2080136000D030F4 /* Config.plist in Resources */,
@@ -352,6 +366,7 @@
 				3F51794D208A25C90025AF9F /* AppDelegate.swift in Sources */,
 				3F517948208A25B00025AF9F /* AnswerController.swift in Sources */,
 				3F51794A208A25B90025AF9F /* QuestionType.swift in Sources */,
+				3FE9730D208E8629000E1FF2 /* Answer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +381,7 @@
 				F8BDF5F62040EE0500AE830A /* Extensions.swift in Sources */,
 				F8FB7153203B5304004F7787 /* ViewController.swift in Sources */,
 				F86D1F75203BB5CE00D01A65 /* WindowController.swift in Sources */,
+				3FE9730C208E8629000E1FF2 /* Answer.swift in Sources */,
 				F8FB7151203B5304004F7787 /* AppDelegate.swift in Sources */,
 				F8BDF5F22040ED9F00AE830A /* AnswerController.swift in Sources */,
 			);

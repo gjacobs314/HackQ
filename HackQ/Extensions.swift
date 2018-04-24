@@ -148,7 +148,7 @@ extension Array where Element : StringProtocol
     }
 }
 
-extension CGFloat {
+extension Float {
     func percentageRoundedTo(places: UInt) -> String {
         return String(format: "%.\(places)f", self * 100)
     }
