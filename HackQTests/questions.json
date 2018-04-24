@@ -1,0 +1,24 @@
+[
+{
+  "type": "question",
+  "ts": "2017-12-28T20:09:43.040Z",
+  "totalTimeMs": 10000,
+  "timeLeftMs": 10000,
+  "questionId": 16913,
+  "question": "Where is Hogwarts located?",
+  "category": "Books",
+  "answers": [
+    {
+    "text" : "Ireland",
+    "answerId" : 107344
+  }, {
+    "text" : "England",
+    "answerId" : 107345
+  }, {
+    "text" : "Scotland",
+    "answerId" : 107346
+  }],
+  "questionNumber": 8,
+  "questionCount": 12,
+  "sent": "2017-12-28T20:09:43.073Z"
+}]
