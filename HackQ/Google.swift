@@ -150,13 +150,14 @@ class Google
         var answerCounts = AnswerCounts()
         var answerResults = AnswerCounts()
         let group = DispatchGroup()
-        for answer in searchStrings.map({ $0.googleOption })
+        for answer in searchStrings
         {
+            let googleOptimized = answer.googleOption
             group.enter()
-            let wordArr = answer.split(separator: " ")
+            let wordArr = googleOptimized.split(separator: " ")
             let search = wordArr.count > 1 ? QuestionType.replace(in: question, replaceWith: "\(wordArr.joined(separator: ". ."))") :
-                QuestionType.replace(in: question, replaceWith: "\(answer).")
-            let searchStr = queryContainsQuestion ? search.withoutExtraneousWords : answer
+                QuestionType.replace(in: question, replaceWith: "\(googleOptimized).")
+            let searchStr = queryContainsQuestion ? search.withoutExtraneousWords : googleOptimized
             
             getGooglePage(for: search) { page, numberOfResults in
                 defer
@@ -169,7 +170,7 @@ class Google
                     return
                 }
                 answerResults[answer] = numberOfResults
-                let matches = numberOfMatches(in: page, longString: searchStr, shortString: answer)
+                let matches = numberOfMatches(in: page, longString: searchStr, shortString: googleOptimized)
                 answerCounts[answer] = matches
             }
         }
@@ -177,7 +178,7 @@ class Google
             fixForSameNumberMatches(answerCounts, numResults: answerResults, shouldAddResults: false) { newAnswerCount in
                 answerCounts = newAnswerCount
                 let largestAnswer = answerCounts.largest
-                guard `is`(answer: largestAnswer.0, inQuestion: question) else
+                guard `is`(answer: largestAnswer.0.googleOption, inQuestion: question) else
                 {
                     completion(answerCounts)
                     return
