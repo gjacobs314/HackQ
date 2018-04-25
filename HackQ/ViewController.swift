@@ -129,7 +129,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 
                 if (type == "question") {
                     self.currentQuestion = Question(json: JSON(receivedAsJSON))
-                    print(String(describing: self.currentQuestion))
+                    print(String(describing: self.currentQuestion!))
                     
                     self.getMatches()
                 

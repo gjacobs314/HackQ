@@ -37,7 +37,7 @@ extension Float {
 
 extension Answer: CustomStringConvertible {
     var description: String {
-        return "\(text) (\(probability.rounded())%)"
+        return "\(text) (\(probability.rounded)%)"
     }
 }
 
