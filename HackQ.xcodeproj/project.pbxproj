@@ -17,6 +17,48 @@
 		3F51794B208A25BC0025AF9F /* SiteEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5F92040EE8B00AE830A /* SiteEncoding.swift */; };
 		3F51794C208A25C20025AF9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5F52040EE0500AE830A /* Extensions.swift */; };
 		3F51794D208A25C90025AF9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB7150203B5304004F7787 /* AppDelegate.swift */; };
+		3F67034D2090C9F4002B1863 /* Discord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703322090C9F4002B1863 /* Discord.swift */; };
+		3F67034E2090C9F4002B1863 /* Discord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703322090C9F4002B1863 /* Discord.swift */; };
+		3F67034F2090C9F4002B1863 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703352090C9F4002B1863 /* MessageModel.swift */; };
+		3F6703502090C9F4002B1863 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703352090C9F4002B1863 /* MessageModel.swift */; };
+		3F6703512090C9F4002B1863 /* EmbedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703362090C9F4002B1863 /* EmbedsModel.swift */; };
+		3F6703522090C9F4002B1863 /* EmbedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703362090C9F4002B1863 /* EmbedsModel.swift */; };
+		3F6703532090C9F4002B1863 /* AttachmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703372090C9F4002B1863 /* AttachmentModel.swift */; };
+		3F6703542090C9F4002B1863 /* AttachmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703372090C9F4002B1863 /* AttachmentModel.swift */; };
+		3F6703552090C9F4002B1863 /* SendMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703382090C9F4002B1863 /* SendMessageRequest.swift */; };
+		3F6703562090C9F4002B1863 /* SendMessageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703382090C9F4002B1863 /* SendMessageRequest.swift */; };
+		3F6703572090C9F4002B1863 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67033A2090C9F4002B1863 /* ChannelModel.swift */; };
+		3F6703582090C9F4002B1863 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67033A2090C9F4002B1863 /* ChannelModel.swift */; };
+		3F6703592090C9F4002B1863 /* WebsocketHeartbeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67033D2090C9F4002B1863 /* WebsocketHeartbeatModel.swift */; };
+		3F67035A2090C9F4002B1863 /* WebsocketHeartbeatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67033D2090C9F4002B1863 /* WebsocketHeartbeatModel.swift */; };
+		3F67035B2090C9F4002B1863 /* WebsocketHelloMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67033E2090C9F4002B1863 /* WebsocketHelloMessageModel.swift */; };
+		3F67035C2090C9F4002B1863 /* WebsocketHelloMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67033E2090C9F4002B1863 /* WebsocketHelloMessageModel.swift */; };
+		3F67035D2090C9F4002B1863 /* GatewayUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67033F2090C9F4002B1863 /* GatewayUrlRequest.swift */; };
+		3F67035E2090C9F4002B1863 /* GatewayUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67033F2090C9F4002B1863 /* GatewayUrlRequest.swift */; };
+		3F67035F2090C9F4002B1863 /* GatewayUrlResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703402090C9F4002B1863 /* GatewayUrlResponseModel.swift */; };
+		3F6703602090C9F4002B1863 /* GatewayUrlResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703402090C9F4002B1863 /* GatewayUrlResponseModel.swift */; };
+		3F6703612090C9F4002B1863 /* WebsocketReadyMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703412090C9F4002B1863 /* WebsocketReadyMessageModel.swift */; };
+		3F6703622090C9F4002B1863 /* WebsocketReadyMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703412090C9F4002B1863 /* WebsocketReadyMessageModel.swift */; };
+		3F6703632090C9F4002B1863 /* WebsocketMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703422090C9F4002B1863 /* WebsocketMessageModel.swift */; };
+		3F6703642090C9F4002B1863 /* WebsocketMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703422090C9F4002B1863 /* WebsocketMessageModel.swift */; };
+		3F6703652090C9F4002B1863 /* WebsocketAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703432090C9F4002B1863 /* WebsocketAPIManager.swift */; };
+		3F6703662090C9F4002B1863 /* WebsocketAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703432090C9F4002B1863 /* WebsocketAPIManager.swift */; };
+		3F6703672090C9F4002B1863 /* PrivateChannelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703452090C9F4002B1863 /* PrivateChannelRequest.swift */; };
+		3F6703682090C9F4002B1863 /* PrivateChannelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703452090C9F4002B1863 /* PrivateChannelRequest.swift */; };
+		3F6703692090C9F4002B1863 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703462090C9F4002B1863 /* UserModel.swift */; };
+		3F67036A2090C9F4002B1863 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703462090C9F4002B1863 /* UserModel.swift */; };
+		3F67036B2090C9F4002B1863 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703482090C9F4002B1863 /* Logger.swift */; };
+		3F67036C2090C9F4002B1863 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703482090C9F4002B1863 /* Logger.swift */; };
+		3F67036D2090C9F4002B1863 /* Registry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703492090C9F4002B1863 /* Registry.swift */; };
+		3F67036E2090C9F4002B1863 /* Registry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6703492090C9F4002B1863 /* Registry.swift */; };
+		3F67036F2090C9F4002B1863 /* NSData+GZIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67034A2090C9F4002B1863 /* NSData+GZIP.swift */; };
+		3F6703702090C9F4002B1863 /* NSData+GZIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67034A2090C9F4002B1863 /* NSData+GZIP.swift */; };
+		3F6703712090C9F4002B1863 /* MappableBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67034B2090C9F4002B1863 /* MappableBase.swift */; };
+		3F6703722090C9F4002B1863 /* MappableBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67034B2090C9F4002B1863 /* MappableBase.swift */; };
+		3F6703732090C9F4002B1863 /* URLEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67034C2090C9F4002B1863 /* URLEndpoints.swift */; };
+		3F6703742090C9F4002B1863 /* URLEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67034C2090C9F4002B1863 /* URLEndpoints.swift */; };
+		3F8936A52093D0D5008C8719 /* DiscordTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8936A42093D0D5008C8719 /* DiscordTrivia.swift */; };
+		3F8936A62093D0D5008C8719 /* DiscordTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8936A42093D0D5008C8719 /* DiscordTrivia.swift */; };
 		3FE9730C208E8629000E1FF2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9730B208E8629000E1FF2 /* Answer.swift */; };
 		3FE9730D208E8629000E1FF2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9730B208E8629000E1FF2 /* Answer.swift */; };
 		3FE9730E208EBF86000E1FF2 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F36C76F208A3321002A7D5C /* questions.json */; };
@@ -53,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DF8EE387063CBD65B76528D /* Pods-HackQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackQ/Pods-HackQ.debug.xcconfig"; sourceTree = "<group>"; };
 		3F0C5CFB2080136000D030F4 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		3F270605208A65AE00B37FB0 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3F36C76F208A3321002A7D5C /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
@@ -60,8 +103,28 @@
 		3F51793E208A24DC0025AF9F /* HackQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F517940208A24DC0025AF9F /* AnswerControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerControllerTest.swift; sourceTree = "<group>"; };
 		3F517942208A24DC0025AF9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F6703322090C9F4002B1863 /* Discord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Discord.swift; sourceTree = "<group>"; };
+		3F6703352090C9F4002B1863 /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		3F6703362090C9F4002B1863 /* EmbedsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedsModel.swift; sourceTree = "<group>"; };
+		3F6703372090C9F4002B1863 /* AttachmentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentModel.swift; sourceTree = "<group>"; };
+		3F6703382090C9F4002B1863 /* SendMessageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageRequest.swift; sourceTree = "<group>"; };
+		3F67033A2090C9F4002B1863 /* ChannelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
+		3F67033D2090C9F4002B1863 /* WebsocketHeartbeatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsocketHeartbeatModel.swift; sourceTree = "<group>"; };
+		3F67033E2090C9F4002B1863 /* WebsocketHelloMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsocketHelloMessageModel.swift; sourceTree = "<group>"; };
+		3F67033F2090C9F4002B1863 /* GatewayUrlRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayUrlRequest.swift; sourceTree = "<group>"; };
+		3F6703402090C9F4002B1863 /* GatewayUrlResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GatewayUrlResponseModel.swift; sourceTree = "<group>"; };
+		3F6703412090C9F4002B1863 /* WebsocketReadyMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsocketReadyMessageModel.swift; sourceTree = "<group>"; };
+		3F6703422090C9F4002B1863 /* WebsocketMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsocketMessageModel.swift; sourceTree = "<group>"; };
+		3F6703432090C9F4002B1863 /* WebsocketAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsocketAPIManager.swift; sourceTree = "<group>"; };
+		3F6703452090C9F4002B1863 /* PrivateChannelRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateChannelRequest.swift; sourceTree = "<group>"; };
+		3F6703462090C9F4002B1863 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		3F6703482090C9F4002B1863 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		3F6703492090C9F4002B1863 /* Registry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registry.swift; sourceTree = "<group>"; };
+		3F67034A2090C9F4002B1863 /* NSData+GZIP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+GZIP.swift"; sourceTree = "<group>"; };
+		3F67034B2090C9F4002B1863 /* MappableBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappableBase.swift; sourceTree = "<group>"; };
+		3F67034C2090C9F4002B1863 /* URLEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEndpoints.swift; sourceTree = "<group>"; };
+		3F8936A42093D0D5008C8719 /* DiscordTrivia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscordTrivia.swift; sourceTree = "<group>"; };
 		3FE9730B208E8629000E1FF2 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
-		7DBE5F04D00B4D86D163E186 /* Pods-HackQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackQ/Pods-HackQ.debug.xcconfig"; sourceTree = "<group>"; };
 		D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F396D168149D3C696E359D36 /* Pods-HackQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackQ/Pods-HackQ.release.xcconfig"; sourceTree = "<group>"; };
 		F86D1F74203BB5CE00D01A65 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
@@ -115,6 +178,89 @@
 			path = HackQTests;
 			sourceTree = "<group>";
 		};
+		3F6703312090C9F4002B1863 /* Discord */ = {
+			isa = PBXGroup;
+			children = (
+				3F6703322090C9F4002B1863 /* Discord.swift */,
+				3F6703332090C9F4002B1863 /* API */,
+			);
+			path = Discord;
+			sourceTree = "<group>";
+		};
+		3F6703332090C9F4002B1863 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3F6703342090C9F4002B1863 /* Messages */,
+				3F6703392090C9F4002B1863 /* General */,
+				3F67033B2090C9F4002B1863 /* WebSockets */,
+				3F6703442090C9F4002B1863 /* Users */,
+				3F6703472090C9F4002B1863 /* Utility */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		3F6703342090C9F4002B1863 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				3F6703352090C9F4002B1863 /* MessageModel.swift */,
+				3F6703362090C9F4002B1863 /* EmbedsModel.swift */,
+				3F6703372090C9F4002B1863 /* AttachmentModel.swift */,
+				3F6703382090C9F4002B1863 /* SendMessageRequest.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		3F6703392090C9F4002B1863 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				3F67033A2090C9F4002B1863 /* ChannelModel.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		3F67033B2090C9F4002B1863 /* WebSockets */ = {
+			isa = PBXGroup;
+			children = (
+				3F67033C2090C9F4002B1863 /* API */,
+				3F6703432090C9F4002B1863 /* WebsocketAPIManager.swift */,
+			);
+			path = WebSockets;
+			sourceTree = "<group>";
+		};
+		3F67033C2090C9F4002B1863 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				3F67033D2090C9F4002B1863 /* WebsocketHeartbeatModel.swift */,
+				3F67033E2090C9F4002B1863 /* WebsocketHelloMessageModel.swift */,
+				3F67033F2090C9F4002B1863 /* GatewayUrlRequest.swift */,
+				3F6703402090C9F4002B1863 /* GatewayUrlResponseModel.swift */,
+				3F6703412090C9F4002B1863 /* WebsocketReadyMessageModel.swift */,
+				3F6703422090C9F4002B1863 /* WebsocketMessageModel.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		3F6703442090C9F4002B1863 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				3F6703452090C9F4002B1863 /* PrivateChannelRequest.swift */,
+				3F6703462090C9F4002B1863 /* UserModel.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		3F6703472090C9F4002B1863 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3F6703482090C9F4002B1863 /* Logger.swift */,
+				3F6703492090C9F4002B1863 /* Registry.swift */,
+				3F67034A2090C9F4002B1863 /* NSData+GZIP.swift */,
+				3F67034B2090C9F4002B1863 /* MappableBase.swift */,
+				3F67034C2090C9F4002B1863 /* URLEndpoints.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		3FE9730A208E8605000E1FF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,8 +281,8 @@
 		C71ABCFF6401BFFACC1C45AA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7DBE5F04D00B4D86D163E186 /* Pods-HackQ.debug.xcconfig */,
 				F396D168149D3C696E359D36 /* Pods-HackQ.release.xcconfig */,
+				0DF8EE387063CBD65B76528D /* Pods-HackQ.debug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -164,6 +310,8 @@
 		F8FB714F203B5304004F7787 /* HackQ */ = {
 			isa = PBXGroup;
 			children = (
+				3F6703312090C9F4002B1863 /* Discord */,
+				3F8936A42093D0D5008C8719 /* DiscordTrivia.swift */,
 				3FE9730A208E8605000E1FF2 /* Model */,
 				F8FB7150203B5304004F7787 /* AppDelegate.swift */,
 				F8FB7152203B5304004F7787 /* ViewController.swift */,
@@ -336,14 +484,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HackQ/Pods-HackQ-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -360,13 +514,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F517941208A24DC0025AF9F /* AnswerControllerTest.swift in Sources */,
+				3F67034E2090C9F4002B1863 /* Discord.swift in Sources */,
+				3F6703542090C9F4002B1863 /* AttachmentModel.swift in Sources */,
 				3F51794C208A25C20025AF9F /* Extensions.swift in Sources */,
+				3F6703622090C9F4002B1863 /* WebsocketReadyMessageModel.swift in Sources */,
 				3F51794B208A25BC0025AF9F /* SiteEncoding.swift in Sources */,
 				3F517949208A25B50025AF9F /* Google.swift in Sources */,
+				3F67036C2090C9F4002B1863 /* Logger.swift in Sources */,
+				3F6703642090C9F4002B1863 /* WebsocketMessageModel.swift in Sources */,
+				3F67036A2090C9F4002B1863 /* UserModel.swift in Sources */,
+				3F6703502090C9F4002B1863 /* MessageModel.swift in Sources */,
+				3F6703662090C9F4002B1863 /* WebsocketAPIManager.swift in Sources */,
+				3F6703742090C9F4002B1863 /* URLEndpoints.swift in Sources */,
 				3F51794D208A25C90025AF9F /* AppDelegate.swift in Sources */,
+				3F67035C2090C9F4002B1863 /* WebsocketHelloMessageModel.swift in Sources */,
+				3F6703602090C9F4002B1863 /* GatewayUrlResponseModel.swift in Sources */,
 				3F517948208A25B00025AF9F /* AnswerController.swift in Sources */,
 				3F51794A208A25B90025AF9F /* QuestionType.swift in Sources */,
+				3F67035A2090C9F4002B1863 /* WebsocketHeartbeatModel.swift in Sources */,
+				3F6703702090C9F4002B1863 /* NSData+GZIP.swift in Sources */,
+				3F6703722090C9F4002B1863 /* MappableBase.swift in Sources */,
+				3F6703522090C9F4002B1863 /* EmbedsModel.swift in Sources */,
+				3F8936A62093D0D5008C8719 /* DiscordTrivia.swift in Sources */,
+				3F6703682090C9F4002B1863 /* PrivateChannelRequest.swift in Sources */,
+				3F6703562090C9F4002B1863 /* SendMessageRequest.swift in Sources */,
+				3F67036E2090C9F4002B1863 /* Registry.swift in Sources */,
 				3FE9730D208E8629000E1FF2 /* Answer.swift in Sources */,
+				3F67035E2090C9F4002B1863 /* GatewayUrlRequest.swift in Sources */,
+				3F6703582090C9F4002B1863 /* ChannelModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,15 +549,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F67036F2090C9F4002B1863 /* NSData+GZIP.swift in Sources */,
+				3F6703532090C9F4002B1863 /* AttachmentModel.swift in Sources */,
 				F8BDF5F02040ED8100AE830A /* Google.swift in Sources */,
+				3F67035B2090C9F4002B1863 /* WebsocketHelloMessageModel.swift in Sources */,
 				F8BDF5FA2040EE8B00AE830A /* SiteEncoding.swift in Sources */,
+				3F67034D2090C9F4002B1863 /* Discord.swift in Sources */,
+				3F6703632090C9F4002B1863 /* WebsocketMessageModel.swift in Sources */,
+				3F6703592090C9F4002B1863 /* WebsocketHeartbeatModel.swift in Sources */,
 				F8BDF5F82040EE6700AE830A /* QuestionType.swift in Sources */,
+				3F6703692090C9F4002B1863 /* UserModel.swift in Sources */,
+				3F67036B2090C9F4002B1863 /* Logger.swift in Sources */,
 				3F270606208A65AE00B37FB0 /* Question.swift in Sources */,
+				3F6703712090C9F4002B1863 /* MappableBase.swift in Sources */,
+				3F67036D2090C9F4002B1863 /* Registry.swift in Sources */,
 				F8BDF5F62040EE0500AE830A /* Extensions.swift in Sources */,
+				3F6703572090C9F4002B1863 /* ChannelModel.swift in Sources */,
+				3F6703672090C9F4002B1863 /* PrivateChannelRequest.swift in Sources */,
+				3F6703652090C9F4002B1863 /* WebsocketAPIManager.swift in Sources */,
+				3F67035D2090C9F4002B1863 /* GatewayUrlRequest.swift in Sources */,
 				F8FB7153203B5304004F7787 /* ViewController.swift in Sources */,
+				3F8936A52093D0D5008C8719 /* DiscordTrivia.swift in Sources */,
+				3F67034F2090C9F4002B1863 /* MessageModel.swift in Sources */,
 				F86D1F75203BB5CE00D01A65 /* WindowController.swift in Sources */,
+				3F6703612090C9F4002B1863 /* WebsocketReadyMessageModel.swift in Sources */,
+				3F6703552090C9F4002B1863 /* SendMessageRequest.swift in Sources */,
 				3FE9730C208E8629000E1FF2 /* Answer.swift in Sources */,
 				F8FB7151203B5304004F7787 /* AppDelegate.swift in Sources */,
+				3F6703732090C9F4002B1863 /* URLEndpoints.swift in Sources */,
+				3F67035F2090C9F4002B1863 /* GatewayUrlResponseModel.swift in Sources */,
+				3F6703512090C9F4002B1863 /* EmbedsModel.swift in Sources */,
 				F8BDF5F22040ED9F00AE830A /* AnswerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,7 +607,6 @@
 /* Begin XCBuildConfiguration section */
 		3F517945208A24DC0025AF9F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DBE5F04D00B4D86D163E186 /* Pods-HackQ.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -556,7 +751,7 @@
 		};
 		F8FB715E203B5304004F7787 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DBE5F04D00B4D86D163E186 /* Pods-HackQ.debug.xcconfig */;
+			baseConfigurationReference = 0DF8EE387063CBD65B76528D /* Pods-HackQ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

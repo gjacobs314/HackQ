@@ -1,28 +1,42 @@
 PODS:
-  - Alamofire (4.6.0)
-  - KeychainSwift (10.0.0)
-  - SwiftWebSocket (2.6.5)
-  - SwiftyJSON (4.0.0)
+  - Alamofire (4.7.2)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - KeychainSwift (11.0.0)
+  - ObjectMapper (3.1.0)
+  - Starscream (3.0.5)
+  - SwiftWebSocket (2.7.0)
+  - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireObjectMapper
   - KeychainSwift
+  - ObjectMapper
+  - Starscream
   - SwiftWebSocket
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - AlamofireObjectMapper
     - KeychainSwift
+    - ObjectMapper
+    - Starscream
     - SwiftWebSocket
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
-  SwiftWebSocket: 1ef8a0efb023544643bdf480c1ec4a62b204f293
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
+  SwiftWebSocket: 612c9729fd503cb6b0b8b45390c788686dac306f
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 7e37992723b838ff66b0610543d2f4f19212faea
+PODFILE CHECKSUM: 9114b923e0b9cba49e6dc1338cb7649f47d95956
 
 COCOAPODS: 1.5.0

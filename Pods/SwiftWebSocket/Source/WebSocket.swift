@@ -210,14 +210,14 @@ public enum WebSocketError : Error, CustomStringConvertible {
     public var description : String {
         switch self {
         case .memory: return "Memory"
-        case .needMoreInput: return "Need more input"
-        case .invalidAddress: return "Invalid address"
-        case .invalidHeader: return "Invalid header"
-        case let .invalidResponse(details): return "Invalid response(\(details))"
-        case let .invalidCompressionOptions(details): return "Invalid compression options(\(details))"
-        case let .libraryError(details): return "Library error(\(details))"
-        case let .protocolError(details): return "Protocol error(\(details))"
-        case let .payloadError(details): return "Payload error(\(details))"
+        case .needMoreInput: return "NeedMoreInput"
+        case .invalidAddress: return "InvalidAddress"
+        case .invalidHeader: return "InvalidHeader"
+        case let .invalidResponse(details): return "InvalidResponse(\(details))"
+        case let .invalidCompressionOptions(details): return "InvalidCompressionOptions(\(details))"
+        case let .libraryError(details): return "LibraryError(\(details))"
+        case let .protocolError(details): return "ProtocolError(\(details))"
+        case let .payloadError(details): return "PayloadError(\(details))"
         case let .network(details): return "Network(\(details))"
         }
     }

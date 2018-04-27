@@ -7,8 +7,10 @@ target 'HackQ' do
 
   # Pods for HackQ
   pod 'Alamofire'
+  pod 'AlamofireObjectMapper'
   pod 'SwiftyJSON'
   pod 'SwiftWebSocket'
   pod 'KeychainSwift'
-
+  pod 'ObjectMapper'
+  pod 'Starscream'
 end
