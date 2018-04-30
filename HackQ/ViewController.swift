@@ -39,9 +39,11 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
     @IBOutlet private weak var answer2Label: NSTextField!
     @IBOutlet private weak var answer3Label: NSTextField!
     @IBOutlet private weak var bestAnswerLabel: NSTextField!
+    @IBOutlet private weak var discordSV: NSStackView!
     
     private var fixedLabels: [NSTextField] = []
     private var answerLabels: [NSTextField] = []
+    private var discordVotesSV: [NSStackView] = []
     
     private let hqheaders: HTTPHeaders = [
         "x-hq-client": Config.hqClient,
@@ -68,15 +70,14 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
         fixedLabels = [fixedQuestionLabel, fixedAnswer1Label, fixedAnswer2Label, fixedAnswer3Label, fixedBestAnswerLabel]
         answerLabels = [answer1Label, answer2Label, answer3Label]
         
+        discordVotesSV = discordSV.arrangedSubviews as! [NSStackView]
+        
         SiteEncoding.addGoogleAPICredentials(apiKeys: [Config.googleAPIKey],
                                              searchEngineID: Config.googleSearchEngineID)
 
         updateQuestionsAndAnswersLabels()
 
         getSocketURL()
-        
-        discordTrivia = DiscordTrivia(triviaShow: .hq)
-        discordTrivia?.delegate = self
     }
     
     func getSocketURL() {
@@ -88,6 +89,8 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
                 if (broadcast != JSON.null) {
                     print("Game is live!")
                     self.showQuestionsAndAnswers()
+                    self.discordTrivia = DiscordTrivia(triviaShow: .hq)
+                    self.discordTrivia?.delegate = self
                     
                     self.socketUrl = JSON(broadcast)["socketUrl"].stringValue
                     print(self.socketUrl)
@@ -98,6 +101,7 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
                     print("-----")
                 } else {
                     print("No socket available. The game is not live.")
+
                     let prize = json["nextShowPrize"].stringValue
                     let showTime = Date(RFC3339FormattedString: json["nextShowTime"].stringValue)!
                     
@@ -196,6 +200,7 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
             self.updateGameAndQuestionsInfoLabel()
             self.gameAndQuestionsInfoLabel.animator().alphaValue = 1.0
             
+            self.discordSV.isHidden = false
             self.questionLabel.isHidden = !self.questionLabel.isHidden
             self.fixedLabels.forEach { $0.isHidden = !$0.isHidden }
             self.answerLabels.forEach { $0.isHidden = !$0.isHidden }
@@ -213,7 +218,7 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
         }
     }
     
-    func updateQuestionsAndAnswersLabels() {
+    private func updateQuestionsAndAnswersLabels() {
         updateGameAndQuestionsInfoLabel()
         
         if let answers = currentQuestion?.answers, let completed = currentQuestion?.hasSearchCompleted, completed {
@@ -239,6 +244,14 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
     
     func didUpdateVotes(votes: DiscordConfidence) {
         // update discord labels with votes
+        var max = (0, 0)
+        for (index, stackView) in discordVotesSV.enumerated() {
+            let voteLabel = stackView.arrangedSubviews.first! as! NSTextField
+            let votes = Int(roundf(votes[UInt(index+1)]!))
+            if votes > max.1 {
+                max = (index+1, votes)
+            }
+            voteLabel.stringValue = "\(votes)"
+        }
     }
-    
 }
