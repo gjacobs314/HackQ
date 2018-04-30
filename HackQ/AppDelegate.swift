@@ -52,6 +52,20 @@ struct Config {
         if searchEngineID.count == 0 { print("Warning: Google Search Engine ID not set!") }
         return searchEngineID
     }()
+    
+    private static let discordRoot: NSDictionary = {
+        return configJSON["Discord"] as! NSDictionary
+    }()
+    
+    static let hqChannels: [String] = {
+       return discordRoot["HQChannels"] as! [String]
+    }()
+    
+    static let discordToken: String = {
+        let token = "\(discordRoot["Token"]!)"
+        if token.count == 0 { print("Warning: Discord token not set!") }
+        return token
+    }()
 }
 
 @NSApplicationMain

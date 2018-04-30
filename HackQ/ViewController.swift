@@ -11,7 +11,22 @@ import Alamofire
 import SwiftyJSON
 import SwiftWebSocket
 
-class ViewController: NSViewController, NSTextFieldDelegate {
+protocol DiscordTriviaNotifyDelegate: class {
+    func didResetRound()
+}
+
+class DiscordTriviaNotifier {
+    weak var delegate: DiscordTriviaNotifyDelegate?
+    
+    init() {}
+    
+    func notifyRoundReset() {
+        print("Round has been reset")
+        delegate?.didResetRound()
+    }
+}
+
+class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelegate {
     @IBOutlet private weak var gameAndQuestionsInfoLabel: NSTextField!
     @IBOutlet private weak var nextGameInfoLabel: NSTextField!
     @IBOutlet private weak var fixedQuestionLabel: NSTextField!
@@ -44,10 +59,12 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         return socketUrl.hasPrefix("wss")
     }
     
+    private var discordTrivia: DiscordTrivia?
     private var currentQuestion: Question?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fixedLabels = [fixedQuestionLabel, fixedAnswer1Label, fixedAnswer2Label, fixedAnswer3Label, fixedBestAnswerLabel]
         answerLabels = [answer1Label, answer2Label, answer3Label]
         
@@ -57,6 +74,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         updateQuestionsAndAnswersLabels()
 
         getSocketURL()
+        
+        discordTrivia = DiscordTrivia(triviaShow: .hq)
+        discordTrivia?.delegate = self
     }
     
     func getSocketURL() {
@@ -128,6 +148,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                 let type = receivedAsJSON["type"] as? String {
                 
                 if (type == "question") {
+                    self.discordTrivia?.discordNotifier.notifyRoundReset()
                     self.currentQuestion = Question(json: JSON(receivedAsJSON))
                     print(String(describing: self.currentQuestion!))
                     
@@ -215,4 +236,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             bestAnswerLabel.stringValue = "Best Answer"
         }
     }
+    
+    func didUpdateVotes(votes: DiscordConfidence) {
+        // update discord labels with votes
+    }
+    
 }
