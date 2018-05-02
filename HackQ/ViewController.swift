@@ -161,6 +161,14 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
                     self.updateQuestionsAndAnswersLabels()
                 }
                 
+                // No more questions this broadcast, so close the socket
+                if let currentQuestion = self.currentQuestion,
+                    currentQuestion.number == currentQuestion.totalCount {
+                    print("Last question received, closing socket!")
+                    ws.close()
+                    return
+                }
+                
                 if (type == "broadcastEnded") {
                     self.openWebSocket()
                 }
