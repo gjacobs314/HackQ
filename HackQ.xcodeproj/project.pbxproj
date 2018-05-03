@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3F0C5CFC2080136000D030F4 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F0C5CFB2080136000D030F4 /* Config.plist */; };
 		3F270606208A65AE00B37FB0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F270605208A65AE00B37FB0 /* Question.swift */; };
+		3F43614E209A46C500FB055F /* DiscordTriviaTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43614D209A46C500FB055F /* DiscordTriviaTest.swift */; };
+		3F436151209A733600FB055F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB7152203B5304004F7787 /* ViewController.swift */; };
+		3F436152209A734C00FB055F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F270605208A65AE00B37FB0 /* Question.swift */; };
 		3F512831208236E400B79B1C /* Config-default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F512830208236E400B79B1C /* Config-default.plist */; };
 		3F517941208A24DC0025AF9F /* AnswerControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F517940208A24DC0025AF9F /* AnswerControllerTest.swift */; };
 		3F517948208A25B00025AF9F /* AnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5F12040ED9F00AE830A /* AnswerController.swift */; };
@@ -63,6 +66,7 @@
 		3FE9730D208E8629000E1FF2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9730B208E8629000E1FF2 /* Answer.swift */; };
 		3FE9730E208EBF86000E1FF2 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F36C76F208A3321002A7D5C /* questions.json */; };
 		3FE9730F208EBF88000E1FF2 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F36C76F208A3321002A7D5C /* questions.json */; };
+		8D5F84BF8F670A6917629453 /* Pods_HackQTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4348DCD222C5732227FC38 /* Pods_HackQTests.framework */; };
 		D23C13D9D3BF3018377E6A9A /* Pods_HackQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */; };
 		F86D1F75203BB5CE00D01A65 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D1F74203BB5CE00D01A65 /* WindowController.swift */; };
 		F8BDF5F02040ED8100AE830A /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDF5EF2040ED8100AE830A /* Google.swift */; };
@@ -99,6 +103,8 @@
 		3F0C5CFB2080136000D030F4 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		3F270605208A65AE00B37FB0 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3F36C76F208A3321002A7D5C /* questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		3F43614D209A46C500FB055F /* DiscordTriviaTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscordTriviaTest.swift; sourceTree = "<group>"; };
+		3F43614F209A693500FB055F /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F512830208236E400B79B1C /* Config-default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Config-default.plist"; sourceTree = "<group>"; };
 		3F51793E208A24DC0025AF9F /* HackQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F517940208A24DC0025AF9F /* AnswerControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerControllerTest.swift; sourceTree = "<group>"; };
@@ -125,7 +131,10 @@
 		3F67034C2090C9F4002B1863 /* URLEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEndpoints.swift; sourceTree = "<group>"; };
 		3F8936A42093D0D5008C8719 /* DiscordTrivia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscordTrivia.swift; sourceTree = "<group>"; };
 		3FE9730B208E8629000E1FF2 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		9036D334BDDF2E542F97DD70 /* Pods-HackQTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackQTests/Pods-HackQTests.release.xcconfig"; sourceTree = "<group>"; };
+		B351C3B0B1D0B8940AE299FA /* Pods-HackQTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackQTests/Pods-HackQTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE4348DCD222C5732227FC38 /* Pods_HackQTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackQTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F396D168149D3C696E359D36 /* Pods-HackQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackQ.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackQ/Pods-HackQ.release.xcconfig"; sourceTree = "<group>"; };
 		F86D1F74203BB5CE00D01A65 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		F8BDF5EF2040ED8100AE830A /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
@@ -154,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D5F84BF8F670A6917629453 /* Pods_HackQTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +184,7 @@
 				3F517940208A24DC0025AF9F /* AnswerControllerTest.swift */,
 				3F36C76F208A3321002A7D5C /* questions.json */,
 				3F517942208A24DC0025AF9F /* Info.plist */,
+				3F43614D209A46C500FB055F /* DiscordTriviaTest.swift */,
 			);
 			path = HackQTests;
 			sourceTree = "<group>";
@@ -273,7 +284,9 @@
 		5194F208AE48B23DB6B0059C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F43614F209A693500FB055F /* SwiftyJSON.framework */,
 				D7764F5B2C717ABF05877B41 /* Pods_HackQ.framework */,
+				DE4348DCD222C5732227FC38 /* Pods_HackQTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -283,6 +296,8 @@
 			children = (
 				F396D168149D3C696E359D36 /* Pods-HackQ.release.xcconfig */,
 				0DF8EE387063CBD65B76528D /* Pods-HackQ.debug.xcconfig */,
+				B351C3B0B1D0B8940AE299FA /* Pods-HackQTests.debug.xcconfig */,
+				9036D334BDDF2E542F97DD70 /* Pods-HackQTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -353,9 +368,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F517947208A24DC0025AF9F /* Build configuration list for PBXNativeTarget "HackQTests" */;
 			buildPhases = (
+				3519BDA9B18FCD91ABC34A15 /* [CP] Check Pods Manifest.lock */,
 				3F51793A208A24DC0025AF9F /* Sources */,
 				3F51793B208A24DC0025AF9F /* Frameworks */,
 				3F51793C208A24DC0025AF9F /* Resources */,
+				B3232CE9095783C7C7482968 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -458,6 +475,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3519BDA9B18FCD91ABC34A15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackQTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7F71DFB1CA4888C92CF8F302 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,6 +541,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackQ/Pods-HackQ-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B3232CE9095783C7C7482968 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HackQTests/Pods-HackQTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftWebSocket/SwiftWebSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackQTests/Pods-HackQTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -514,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F517941208A24DC0025AF9F /* AnswerControllerTest.swift in Sources */,
+				3F436152209A734C00FB055F /* Question.swift in Sources */,
 				3F67034E2090C9F4002B1863 /* Discord.swift in Sources */,
 				3F6703542090C9F4002B1863 /* AttachmentModel.swift in Sources */,
 				3F51794C208A25C20025AF9F /* Extensions.swift in Sources */,
@@ -522,6 +588,7 @@
 				3F517949208A25B50025AF9F /* Google.swift in Sources */,
 				3F67036C2090C9F4002B1863 /* Logger.swift in Sources */,
 				3F6703642090C9F4002B1863 /* WebsocketMessageModel.swift in Sources */,
+				3F436151209A733600FB055F /* ViewController.swift in Sources */,
 				3F67036A2090C9F4002B1863 /* UserModel.swift in Sources */,
 				3F6703502090C9F4002B1863 /* MessageModel.swift in Sources */,
 				3F6703662090C9F4002B1863 /* WebsocketAPIManager.swift in Sources */,
@@ -532,6 +599,7 @@
 				3F517948208A25B00025AF9F /* AnswerController.swift in Sources */,
 				3F51794A208A25B90025AF9F /* QuestionType.swift in Sources */,
 				3F67035A2090C9F4002B1863 /* WebsocketHeartbeatModel.swift in Sources */,
+				3F43614E209A46C500FB055F /* DiscordTriviaTest.swift in Sources */,
 				3F6703702090C9F4002B1863 /* NSData+GZIP.swift in Sources */,
 				3F6703722090C9F4002B1863 /* MappableBase.swift in Sources */,
 				3F6703522090C9F4002B1863 /* EmbedsModel.swift in Sources */,
@@ -607,6 +675,7 @@
 /* Begin XCBuildConfiguration section */
 		3F517945208A24DC0025AF9F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B351C3B0B1D0B8940AE299FA /* Pods-HackQTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -624,6 +693,7 @@
 		};
 		3F517946208A24DC0025AF9F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9036D334BDDF2E542F97DD70 /* Pods-HackQTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -673,6 +743,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -732,6 +803,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

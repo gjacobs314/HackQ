@@ -1,0 +1,6 @@
+framework module Pods_HackQTests {
+  umbrella header "Pods-HackQTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

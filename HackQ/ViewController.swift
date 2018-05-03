@@ -12,6 +12,7 @@ import SwiftyJSON
 import SwiftWebSocket
 
 protocol DiscordTriviaNotifyDelegate: class {
+    func broadcastStateChanged(isLive: Bool)
     func didResetRound()
 }
 
@@ -20,8 +21,11 @@ class DiscordTriviaNotifier {
     
     init() {}
     
+    func notifyBroadcastStateChanged(isLive: Bool) {
+        delegate?.broadcastStateChanged(isLive: isLive)
+    }
+    
     func notifyRoundReset() {
-        print("Round has been reset")
         delegate?.didResetRound()
     }
 }
@@ -152,7 +156,8 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
                 let type = receivedAsJSON["type"] as? String {
                 
                 if (type == "question") {
-                    self.discordTrivia?.discordNotifier.notifyRoundReset()
+                    self.updateDiscordState()
+                    
                     self.currentQuestion = Question(json: JSON(receivedAsJSON))
                     print(String(describing: self.currentQuestion!))
                     
@@ -250,15 +255,19 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
         }
     }
     
+    private func updateDiscordState() {
+        if let _ = self.currentQuestion {
+            self.discordTrivia?.discordNotifier.notifyRoundReset()
+        } else {
+            self.discordTrivia?.discordNotifier.notifyBroadcastStateChanged(isLive: true)
+        }
+    }
+    
     func didUpdateVotes(votes: DiscordConfidence) {
         // update discord labels with votes
-        var max = (0, 0)
         for (index, stackView) in discordVotesSV.enumerated() {
             let voteLabel = stackView.arrangedSubviews.first! as! NSTextField
             let votes = Int(roundf(votes[UInt(index+1)]!))
-            if votes > max.1 {
-                max = (index+1, votes)
-            }
             voteLabel.stringValue = "\(votes)"
         }
     }
