@@ -9,6 +9,8 @@ import Starscream
 import ObjectMapper
 import Dispatch
 
+public let closeSocketNotificationName = "closeSocket"
+
 public protocol WebsocketAPIManagerDelegate : class {
     func websocketAuthenticationError()
     func websocketEndpointError()
@@ -23,6 +25,19 @@ open class WebsocketAPIManager: NSObject, WebSocketDelegate {
     fileprivate var socket: WebSocket?
     fileprivate var timer: Timer?
     fileprivate var sequence: Int?
+    
+    public override init() {
+        super.init()
+        
+        let center = NotificationCenter.default
+        let mainQueue = OperationQueue.main
+        var token: NSObjectProtocol?
+        token = center.addObserver(forName: NSNotification.Name(rawValue: closeSocketNotificationName), object: nil, queue: mainQueue, using: { _ in
+            print("Disconnecting Discord socket...")
+            self.socket?.disconnect()
+            center.removeObserver(token!)
+        })
+    }
 
     open func fetchEndpointAndConnect() {
         // This will fetch the websocket URL
@@ -53,7 +68,7 @@ open class WebsocketAPIManager: NSObject, WebSocketDelegate {
         socket!.delegate = self
         socket!.connect()
     }
-
+    
     func handleMessage(_ text: String) {
         if let message = Mapper<WebsocketMessageModel>().map(JSONString: text), let type = message.type, let data = message.data {
             self.sequence = message.sequence // for heart beat
@@ -130,14 +145,18 @@ open class WebsocketAPIManager: NSObject, WebSocketDelegate {
     open func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         cancelKeepAlive()
         if let err = error {
-            LOG_ERROR("Websocket disconnected with error: \(err) - attempting reconnect")
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(5*NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
-                self.socket = nil
-                self.connectWebSocket()
+            let error = err as! WSError
+            if error.code != 1000 {
+                LOG_ERROR("Websocket disconnected with error: \(err) - attempting reconnect")
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(5*NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
+                    self.socket = nil
+                    self.connectWebSocket()
+                }
+                return
             }
-        } else {
-            LOG_INFO("Websocket disconnected")
         }
+        
+        LOG_INFO("Websocket disconnected")
     }
 
     open func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {

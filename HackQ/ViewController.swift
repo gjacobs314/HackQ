@@ -84,6 +84,10 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
         getSocketURL()
     }
     
+    deinit {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: closeSocketNotificationName), object: nil)
+    }
+    
     func getSocketURL() {
         Alamofire.request("\(Config.hostFullURL)\(Config.userID)", headers: hqheaders).responseJSON { response in
             if let result = response.result.value {
