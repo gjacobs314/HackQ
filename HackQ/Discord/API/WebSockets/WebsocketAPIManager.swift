@@ -145,18 +145,26 @@ open class WebsocketAPIManager: NSObject, WebSocketDelegate {
     open func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         cancelKeepAlive()
         if let err = error {
-            let error = err as! WSError
-            if error.code != 1000 {
-                LOG_ERROR("Websocket disconnected with error: \(err) - attempting reconnect")
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(5*NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
-                    self.socket = nil
-                    self.connectWebSocket()
-                }
+            guard let wserror = err as? WSError else {
+                reconnectAfter(error: err)
+                return
+            }
+            
+            if wserror.code != 1000 {
+                reconnectAfter(error: err)
                 return
             }
         }
         
         LOG_INFO("Websocket disconnected")
+    }
+    
+    private func reconnectAfter(error: Error) {
+        LOG_ERROR("Websocket disconnected with error: \(error) - attempting reconnect")
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(5*NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
+            self.socket = nil
+            self.connectWebSocket()
+        }
     }
 
     open func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
