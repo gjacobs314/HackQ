@@ -4,7 +4,7 @@ platform :osx, '10.13'
 def pods
   use_frameworks!
 
-  # Pods for HackQ
+  # Pods for Trivia Swift
   pod 'Alamofire'
   pod 'AlamofireObjectMapper'
   pod 'SwiftyJSON'
@@ -14,10 +14,10 @@ def pods
   pod 'Starscream'
 end
 
-target 'HackQ' do
+target 'Trivia Swift' do
   pods
 end
 
-target 'HackQTests' do
+target 'Trivia SwiftTests' do
   pods
 end

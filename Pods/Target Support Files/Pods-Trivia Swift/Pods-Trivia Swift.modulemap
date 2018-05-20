@@ -1,0 +1,6 @@
+framework module Pods_Trivia_Swift {
+  umbrella header "Pods-Trivia Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
