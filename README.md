@@ -61,7 +61,7 @@ Trivia Swift will **always** be free and open-source. No hidden fees, no monthly
 
 ## Support 
 
-If you need any help, open an issue and I will assist you. Alternatively, you can contact the [developer of the original project](https://github.com/gjacobs314/HQTrivia).
+If you need any help, please open an issue and I will assist you.
 
 ## TODO:
 - [x] Crowdsource answers from Discord trivia server for a second opinion.
