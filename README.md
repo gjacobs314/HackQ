@@ -1,9 +1,10 @@
 # Welcome to Trivia Swift (macOS)
-## Ever imagined combining the power of an answer bot with Discord crowd-sourced answers? Well, look no further. 
 
-## Trivia Swift is the first app to provide live answers *and* Discord votes for HQ Trivia, as well as supporting other trivia games! 
+Ever imagined combining the power of an answer bot with Discord crowd-sourced answers? Well, look no further. 
 
-## Trivia Swift will always be free and open-source. No hidden fees, no monthly subscriptions, no downtime.
+**Trivia Swift is the first app to provide live answers *and* Discord votes for HQ Trivia, as well as supporting other trivia games!** 
+
+Trivia Swift will **always** be free and open-source. No hidden fees, no monthly subscriptions, no downtime.
 
 | ![](https://i.imgur.com/NKIezgd.png) | 
 |:--:| 
