@@ -12,6 +12,7 @@ def pods
   pod 'KeychainSwift'
   pod 'ObjectMapper'
   pod 'Starscream'
+  pod 'HotKey'
 end
 
 target 'Trivia Swift' do
