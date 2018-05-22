@@ -7,16 +7,22 @@
 //
 
 import Cocoa
+import HotKey
 
 class DiscordShow: NSViewController, DiscordTriviaDelegate {
     @IBOutlet weak var showTitle: NSTextField!
     @IBOutlet private weak var answerSV: NSStackView!
-    
+
+    let resetShortcutPressed = HotKey(key: .r, modifiers: [.command])
     var discordTrivia: DiscordTrivia?
     private var answerBoxes: [NSBox] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resetShortcutPressed.keyDownHandler = {
+            self.discordTrivia?.discordNotifier.notifyRoundReset()
+        }
         
         answerBoxes = answerSV.arrangedSubviews as! [NSBox]
     }
