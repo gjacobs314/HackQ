@@ -27,14 +27,14 @@
 		<string></string>
 	</dict>
 	<key>BearerToken</key>
-	<string>Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMDk4MDUzLCJ1c2VybmFtZSI6IjEyMzQ1Njc4OTEwMTEiLCJhdmF0YXJVcmwiOiJzMzovL2h5cGVzcGFjZS1xdWl6L2RlZmF1bHRfYXZhdGFycy9VbnRpdGxlZC0xXzAwMDRfZ29sZC5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiIiLCJndWVzdElkIjpudWxsLCJ2IjoxLCJpYXQiOjE1MTk1MTE5NTksImV4cCI6MTUyNzI4Nzk1OSwiaXNzIjoiaHlwZXF1aXovMSJ9.AoMWU1tj7w0KXYcrm0a8UwxjA0g_xuPehOAAMlPnWNY</string>
+	<string>Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE5Mzg2ODM2LCJ1c2VybmFtZSI6ImZhZXRhZiIsImF2YXRhclVybCI6Imh0dHBzOi8vZDJ4dTFoZG9taDNucnguY2xvdWRmcm9udC5uZXQvZGVmYXVsdF9hdmF0YXJzL1VudGl0bGVkLTFfMDAwMV9ibHVlLnBuZyIsInRva2VuIjoidFJhS2RnIiwicm9sZXMiOltdLCJjbGllbnQiOiJBbmRyb2lkLzEuOC4xIiwiZ3Vlc3RJZCI6bnVsbCwidiI6MSwiaWF0IjoxNTI3MDM3MjQ4LCJleHAiOjE1MzQ4MTMyNDgsImlzcyI6Imh5cGVxdWl6LzEifQ.2c7O3awXNeNSd8cMVZE4LHgI29gbYDaAVqIhPD2uCxY</string>
 	<key>UserID</key>
-	<string>10098053</string>
+	<string>19386836</string>
 	<key>HostURL</key>
 	<string>api-quiz.hype.space</string>
 	<key>HostFullURL</key>
 	<string>https://api-quiz.hype.space/shows/now?type=hq&amp;userId=</string>
 	<key>HQClient</key>
-	<string>iOS/1.2.17</string>
+	<string>iOS/1.3.6</string>
 </dict>
 </plist>

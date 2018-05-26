@@ -57,7 +57,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="HackQ" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Trivia_Swift" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,7 +66,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="HackQ" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Trivia_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Trivia Swift" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="700" height="400"/>
@@ -106,7 +106,7 @@
         <!--Choose ShowVC-->
         <scene sceneID="QMj-E0-fpP">
             <objects>
-                <viewController id="lzd-Mk-O9w" customClass="ChooseShowVC" customModule="HackQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lzd-Mk-O9w" customClass="ChooseShowVC" customModule="Trivia_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ds7-WK-MCp">
                         <rect key="frame" x="0.0" y="0.0" width="456" height="292"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -239,7 +239,7 @@
         <!--Discord Show-->
         <scene sceneID="OyZ-eM-dnN">
             <objects>
-                <viewController title="Discord Show" showSeguePresentationStyle="single" id="1BJ-AO-frS" customClass="DiscordShow" customModule="HackQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Discord Show" showSeguePresentationStyle="single" id="1BJ-AO-frS" customClass="DiscordShow" customModule="Trivia_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="dhb-u6-iJf">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="290"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -447,7 +447,7 @@
         <!--Window Controller-->
         <scene sceneID="98S-8a-haE">
             <objects>
-                <windowController id="hBr-dd-x29" customClass="WindowController" customModule="HackQ" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController id="hBr-dd-x29" customClass="WindowController" customModule="Trivia_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="DEk-c8-ZUN">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -468,7 +468,7 @@
         <!--Window Controller-->
         <scene sceneID="v55-Hf-COR">
             <objects>
-                <windowController id="Nea-9k-Guj" customClass="WindowController" customModule="HackQ" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController id="Nea-9k-Guj" customClass="WindowController" customModule="Trivia_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="EUe-Y1-jeJ">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -489,13 +489,13 @@
         <!--HQ-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController title="HQ" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="ViewController" customModule="HackQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HQ" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="ViewController" customModule="Trivia_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="700" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-l4-Q04">
-                                <rect key="frame" x="208" y="243" width="285" height="81"/>
+                                <rect key="frame" x="37" y="243" width="626" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Loading..." id="uRA-x4-MNe">
                                     <font key="font" metaFont="systemBold" size="24"/>

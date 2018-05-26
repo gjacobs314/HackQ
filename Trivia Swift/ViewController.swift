@@ -92,8 +92,16 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
         Alamofire.request("\(Config.hostFullURL)\(Config.userID)", headers: hqheaders).responseJSON { response in
             if let result = response.result.value {
                 let json = JSON(result)
-                let broadcast = json["broadcast"]
                 
+                if json["error"] != JSON.null {
+                    let error = (code: json["errorCode"], text: json["error"])
+                    print("Error code \(error.code): \(error.text)")
+                    self.nextGameInfoLabel.stringValue = "\(error.text) (bearer token has probably expired)"
+                    self.nextGameInfoLabel.textColor = NSColor(rgb: 0xEA2027)
+                    return
+                }
+                
+                let broadcast = json["broadcast"]
                 if (broadcast != JSON.null) {
                     print("Game is live!")
                     self.showQuestionsAndAnswers()
@@ -109,7 +117,7 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
                     print("-----")
                 } else {
                     print("No socket available. The game is not live.")
-                    
+
                     let prize = json["nextShowPrize"].stringValue
                     let showTime = Date(RFC3339FormattedString: json["nextShowTime"].stringValue)!
                     
