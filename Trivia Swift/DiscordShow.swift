@@ -15,7 +15,7 @@ class DiscordShow: NSViewController, DiscordTriviaDelegate {
 
     let resetShortcutPressed = HotKey(key: .r, modifiers: [.command])
     var discordTrivia: DiscordTrivia?
-    private var answerBoxes: [NSBox] = []
+    private var discordVoteBoxes: [NSBox] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,8 @@ class DiscordShow: NSViewController, DiscordTriviaDelegate {
         resetShortcutPressed.keyDownHandler = {
             self.discordTrivia?.discordNotifier.notifyRoundReset()
         }
-        
-        answerBoxes = answerSV.arrangedSubviews as! [NSBox]
+      
+        discordVoteBoxes = answerSV.arrangedSubviews as! [NSBox]
     }
     
     override func viewWillAppear() {
@@ -44,16 +44,6 @@ class DiscordShow: NSViewController, DiscordTriviaDelegate {
     }
     
     func didUpdateVotes(votes: DiscordConfidence) {
-        let max = votes.max()
-        
-        for (index, box) in answerBoxes.enumerated() {
-            let vote = votes[index]
-            let voteLabel = (box.subviews.first?.subviews.first as! NSStackView).subviews.last! as! NSTextField
-            voteLabel.stringValue = "\(vote) \(vote != 1 ? "votes" : "vote")"
-            
-            vote != 0 && vote == max ?
-                (box.fillColor = NSColor(rgb: 0x009432)) :
-                (box.fillColor = NSColor.black.withAlphaComponent(0))
-        }
+        discordVoteBoxes.updateVotes(votes: votes, for: discordTrivia!.show)
     }
 }

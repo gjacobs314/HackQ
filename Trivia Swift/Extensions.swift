@@ -375,3 +375,31 @@ extension NSColor {
     }
 }
 
+extension Array where Element: NSBox {
+    func updateVotes(votes: DiscordConfidence, for show: TriviaShow) {
+        let max = votes.max()
+        
+        for (index, box) in self.enumerated() {
+            let vote = votes[index]
+            var voteLabel: NSTextField!
+            var defaultFillColor: NSColor!
+            
+            if show == .hq {
+                // box -> view -> answer votes label
+                voteLabel = box.subviews.first?.subviews.last as! NSTextField
+                defaultFillColor = .gray
+            } else {
+                // box -> view -> stackview -> answer votes label
+                voteLabel = box.subviews.first?.subviews.first?.subviews.last as! NSTextField
+                defaultFillColor = NSColor.black.withAlphaComponent(0)
+            }
+            
+            voteLabel.stringValue = "\(vote) \(vote != 1 ? "votes" : "vote")"
+            
+            vote != 0 && vote == max ?
+                (box.fillColor = NSColor(rgb: 0x009432)) :
+                (box.fillColor = defaultFillColor)
+        }
+    }
+}
+

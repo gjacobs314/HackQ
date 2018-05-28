@@ -47,7 +47,7 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
     
     private var fixedLabels: [NSTextField] = []
     private var answerLabels: [NSTextField] = []
-    private var discordVotesSV: [NSStackView] = []
+    private var discordVoteBoxes: [NSBox] = []
     
     private let hqheaders: HTTPHeaders = [
         "x-hq-client": Config.hqClient,
@@ -74,7 +74,7 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
         fixedLabels = [fixedQuestionLabel, fixedAnswer1Label, fixedAnswer2Label, fixedAnswer3Label, fixedBestAnswerLabel]
         answerLabels = [answer1Label, answer2Label, answer3Label]
         
-        discordVotesSV = discordSV.arrangedSubviews as! [NSStackView]
+        discordVoteBoxes = discordSV.arrangedSubviews as! [NSBox]
         
         SiteEncoding.addGoogleAPICredentials(apiKeys: [Config.googleAPIKey],
                                              searchEngineID: Config.googleSearchEngineID)
@@ -276,10 +276,6 @@ class ViewController: NSViewController, NSTextFieldDelegate, DiscordTriviaDelega
     }
     
     func didUpdateVotes(votes: DiscordConfidence) {
-        // update discord labels with votes
-        for (index, stackView) in discordVotesSV.enumerated() {
-            let voteLabel = stackView.arrangedSubviews.first! as! NSTextField
-            voteLabel.stringValue = "\(votes[index])"
-        }
+        discordVoteBoxes.updateVotes(votes: votes, for: discordTrivia!.show)
     }
 }

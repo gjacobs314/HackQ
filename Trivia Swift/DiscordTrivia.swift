@@ -30,7 +30,7 @@ class DiscordTrivia: DiscordDelegate, DiscordTriviaNotifyDelegate {
         case notConfident = 0.25
     }
     
-    private var show: TriviaShow! {
+    private(set) var show: TriviaShow! {
         didSet {
             switch show {
             case .hq:
