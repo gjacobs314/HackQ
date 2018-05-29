@@ -19,11 +19,11 @@ class DiscordShow: NSViewController, DiscordTriviaDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        resetShortcutPressed.keyDownHandler = {
+
+        resetShortcutPressed.keyDownHandler = { [unowned self] in
             self.discordTrivia?.discordNotifier.notifyRoundReset()
         }
-      
+        
         discordVoteBoxes = answerSV.arrangedSubviews as! [NSBox]
     }
     
