@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14112" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14112"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
@@ -70,6 +70,12 @@
                                                 <segue destination="hBr-dd-x29" kind="show" identifier="joyrideSegue" id="imJ-7s-Olw"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Cgd-qJ-RKh"/>
+                                        <menuItem title="Close Window" keyEquivalent="w" id="aF8-5p-zZ0">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="aOH-QV-RSR"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -99,9 +105,9 @@
                                 <toolbarItem implicitItemIdentifier="170605F3-95AC-49BF-A331-86C0D9636A75" label="" paletteLabel="" id="95R-mL-Lbp">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="38" height="17"/>
-                                    <size key="maxSize" width="64" height="30"/>
+                                    <size key="maxSize" width="122" height="30"/>
                                     <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="7aa-jQ-H3m">
-                                        <rect key="frame" x="0.0" y="14" width="64" height="30"/>
+                                        <rect key="frame" x="0.0" y="14" width="81" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Trivia Swift" id="3og-5J-8Hh">
                                             <font key="font" metaFont="system" size="15"/>
@@ -123,7 +129,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160" y="330"/>
+            <point key="canvasLocation" x="172" y="445"/>
         </scene>
         <!--Choose ShowVC-->
         <scene sceneID="QMj-E0-fpP">
