@@ -38,7 +38,7 @@ Trivia Swift will **always** be free and open-source. No hidden fees, no monthly
 |:--:| 
 | *HQ user interface when no game is live* |
 
-| ![](https://i.imgur.com/wHz8b6X.png) | 
+| ![](https://i.imgur.com/zLPurax.png) | 
 |:--:| 
 | *HQ user interface when a game is in progress, with Discord votes quantified as points* |
 
