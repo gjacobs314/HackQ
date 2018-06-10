@@ -1,19 +1,19 @@
 //
-//  ChooseShowVC.swift
+//  TSSegue.swift
 //  Trivia Swift
 //
-//  Created by Nino Vitale on 5/6/18.
+//  Created by Nino Vitale on 6/10/18.
 //  Copyright © 2018 Gordon Jacobs. All rights reserved.
 //
 
 import Cocoa
 
-class ChooseShowVC: NSViewController {
-    override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        guard let segueName = segue.identifier?.rawValue else { return }
-        
-        if let discordShowVC = (segue.destinationController as! WindowController).contentViewController as? DiscordShow {
-            switch segueName {
+class TSSegue: NSStoryboardSegue {
+    override func perform() {
+        guard let identifier = identifier else { return }
+                
+        if let discordShowVC = (destinationController as! WindowController).contentViewController as? DiscordShow {
+            switch identifier.rawValue {
             case "cashShowSegue":
                 discordShowVC.discordTrivia = DiscordTrivia(triviaShow: .cashShow)
                 discordShowVC.showTitle.stringValue = "CASHSHOW"
@@ -23,6 +23,9 @@ class ChooseShowVC: NSViewController {
             default:
                 return
             }
+            
+            super.perform()
         }
+        
     }
 }

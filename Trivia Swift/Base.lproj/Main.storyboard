@@ -62,12 +62,12 @@
                                         </menuItem>
                                         <menuItem title="New Cash Show Window" keyEquivalent="2" id="rT3-N8-WrD">
                                             <connections>
-                                                <segue destination="hBr-dd-x29" kind="show" identifier="cashshowSegue" id="JIR-Jm-evo"/>
+                                                <segue destination="hBr-dd-x29" kind="show" identifier="cashShowSegue" customClass="TSSegue" customModule="Trivia_Swift" customModuleProvider="target" id="JIR-Jm-evo"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="New Joyride Window" keyEquivalent="3" id="G7K-EC-pgv">
                                             <connections>
-                                                <segue destination="hBr-dd-x29" kind="show" identifier="joyrideSegue" id="imJ-7s-Olw"/>
+                                                <segue destination="hBr-dd-x29" kind="show" identifier="joyrideSegue" customClass="TSSegue" customModule="Trivia_Swift" customModuleProvider="target" id="imJ-7s-Olw"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="Cgd-qJ-RKh"/>
@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="172" y="445"/>
         </scene>
-        <!--Choose ShowVC-->
+        <!--View Controller-->
         <scene sceneID="QMj-E0-fpP">
             <objects>
-                <viewController id="lzd-Mk-O9w" customClass="ChooseShowVC" customModule="Trivia_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lzd-Mk-O9w" sceneMemberID="viewController">
                     <view key="view" id="ds7-WK-MCp">
                         <rect key="frame" x="0.0" y="0.0" width="456" height="292"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -182,7 +182,7 @@
                                                         <font key="font" metaFont="systemSemibold" size="20"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <segue destination="hBr-dd-x29" kind="show" identifier="cashShowSegue" id="B7g-m2-86Z"/>
+                                                        <segue destination="hBr-dd-x29" kind="show" identifier="cashShowSegue" customClass="TSSegue" customModule="Trivia_Swift" customModuleProvider="target" id="B7g-m2-86Z"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -209,7 +209,7 @@
                                                         <font key="font" metaFont="systemSemibold" size="20"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <segue destination="hBr-dd-x29" kind="show" identifier="joyrideSegue" id="7Rq-sB-0wE"/>
+                                                        <segue destination="hBr-dd-x29" kind="show" identifier="joyrideSegue" customClass="TSSegue" customModule="Trivia_Swift" customModuleProvider="target" id="7Rq-sB-0wE"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -477,7 +477,7 @@
         <!--Window Controller-->
         <scene sceneID="98S-8a-haE">
             <objects>
-                <windowController id="hBr-dd-x29" customClass="WindowController" customModule="Trivia_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="hBr-dd-x29" customClass="WindowController" customModule="Trivia_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="DEk-c8-ZUN">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -766,7 +766,7 @@
         <image name="NSRefreshTemplate" width="11" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NBI-rc-tNA"/>
-        <segue reference="imJ-7s-Olw"/>
+        <segue reference="xZf-1L-0Lq"/>
+        <segue reference="7Rq-sB-0wE"/>
     </inferredMetricsTieBreakers>
 </document>

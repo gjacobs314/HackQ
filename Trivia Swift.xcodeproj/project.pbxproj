@@ -63,7 +63,7 @@
 		3F6703742090C9F4002B1863 /* URLEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67034C2090C9F4002B1863 /* URLEndpoints.swift */; };
 		3F8936A52093D0D5008C8719 /* DiscordTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8936A42093D0D5008C8719 /* DiscordTrivia.swift */; };
 		3F8936A62093D0D5008C8719 /* DiscordTrivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8936A42093D0D5008C8719 /* DiscordTrivia.swift */; };
-		3FD53031209FAF4F006BEF57 /* ChooseShowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD53030209FAF4F006BEF57 /* ChooseShowVC.swift */; };
+		3F9576A220CCA22200F26EDA /* TSSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9576A120CCA22200F26EDA /* TSSegue.swift */; };
 		3FE9730C208E8629000E1FF2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9730B208E8629000E1FF2 /* Answer.swift */; };
 		3FE9730D208E8629000E1FF2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9730B208E8629000E1FF2 /* Answer.swift */; };
 		3FE9730E208EBF86000E1FF2 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 3F36C76F208A3321002A7D5C /* questions.json */; };
@@ -133,7 +133,7 @@
 		3F67034B2090C9F4002B1863 /* MappableBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappableBase.swift; sourceTree = "<group>"; };
 		3F67034C2090C9F4002B1863 /* URLEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEndpoints.swift; sourceTree = "<group>"; };
 		3F8936A42093D0D5008C8719 /* DiscordTrivia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscordTrivia.swift; sourceTree = "<group>"; };
-		3FD53030209FAF4F006BEF57 /* ChooseShowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseShowVC.swift; sourceTree = "<group>"; };
+		3F9576A120CCA22200F26EDA /* TSSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSSegue.swift; sourceTree = "<group>"; };
 		3FE9730B208E8629000E1FF2 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		44151F9797D4BE293863A0F8 /* Pods_Trivia_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trivia_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8904F1224E0A132BD939BA /* Pods-Trivia Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivia Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trivia Swift/Pods-Trivia Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -333,7 +333,7 @@
 				3F8936A42093D0D5008C8719 /* DiscordTrivia.swift */,
 				3FE9730A208E8605000E1FF2 /* Model */,
 				F8FB7150203B5304004F7787 /* AppDelegate.swift */,
-				3FD53030209FAF4F006BEF57 /* ChooseShowVC.swift */,
+				3F9576A120CCA22200F26EDA /* TSSegue.swift */,
 				3F4400FB209B8CD400A73938 /* DiscordShow.swift */,
 				F8FB7152203B5304004F7787 /* ViewController.swift */,
 				F86D1F74203BB5CE00D01A65 /* WindowController.swift */,
@@ -637,6 +637,7 @@
 				3F6703632090C9F4002B1863 /* WebsocketMessageModel.swift in Sources */,
 				3F6703592090C9F4002B1863 /* WebsocketHeartbeatModel.swift in Sources */,
 				F8BDF5F82040EE6700AE830A /* QuestionType.swift in Sources */,
+				3F9576A220CCA22200F26EDA /* TSSegue.swift in Sources */,
 				3F6703692090C9F4002B1863 /* UserModel.swift in Sources */,
 				3F67036B2090C9F4002B1863 /* Logger.swift in Sources */,
 				3F270606208A65AE00B37FB0 /* Question.swift in Sources */,
@@ -659,7 +660,6 @@
 				3F67035F2090C9F4002B1863 /* GatewayUrlResponseModel.swift in Sources */,
 				3F6703512090C9F4002B1863 /* EmbedsModel.swift in Sources */,
 				F8BDF5F22040ED9F00AE830A /* AnswerController.swift in Sources */,
-				3FD53031209FAF4F006BEF57 /* ChooseShowVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
