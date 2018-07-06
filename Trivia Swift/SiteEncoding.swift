@@ -10,8 +10,8 @@ import Foundation
 import Cocoa
 import KeychainSwift
 
-private let googleSearchAPIKeyConstant = Config.googleAPIKey
-private let googleSearchSearchEngineIDConstant = Config.googleSearchEngineID
+private let googleSearchAPIKeyConstant = "GOOGLE_API_KEY"
+private let googleSearchSearchEngineIDConstant = "GOOGLE_SEARCH_ENGINE_ID"
 
 /**
  Determines what site will be searched for answers
