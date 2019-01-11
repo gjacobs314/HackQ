@@ -37,7 +37,7 @@
 - This is meant for educational use only, I do not advise you to use this in an actual HQ game because it is against their terms of service
 
 ## TODO:
-- [x] [Make a website that shows the answers... #RIP HQ emailed me requesting it to be disabled](https://www.thehackq.com)
+- [x] [Make a website that shows the answers... Never mind, HQ emailed me requesting it to be disabled](https://www.thehackq.com)
 - [ ] Improve accuracy and add additional algorithms for searching.
 - [ ] Show percentages of answers/confidence to aid answering.
 - [ ] Show chat messages.
