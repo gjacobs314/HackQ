@@ -11,6 +11,11 @@ import Alamofire
 import SwiftyJSON
 import SwiftWebSocket
 
+let bearerTokenConstant = "BEARER_TOKEN_HERE"
+let userIDConstant = "USER_ID"
+let googleAPIKeyConstant = "GOOGLE_API_KEY"
+let googleCSEKeyConstant = "GOOGLE_CSE_KEY"
+
 class ViewController: NSViewController, NSTextFieldDelegate {
 
     /*
@@ -28,7 +33,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     let hqheaders : HTTPHeaders = [
         "x-hq-client": "iOS/1.2.17",
-        "Authorization": "Bearer BEARER_TOKEN_HERE",
+        "Authorization": "Bearer \(bearerTokenConstant)",
         "x-hq-stk": "MQ==",
         "Host": "api-quiz.hype.space",
         "Connection": "Keep-Alive",
@@ -47,14 +52,14 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        SiteEncoding.addGoogleAPICredentials(apiKeys: ["GOOGLE_API_KEY"], searchEngineID: "GOOGLE_CSE_ID")
+        SiteEncoding.addGoogleAPICredentials(apiKeys: [googleAPIKeyConstant], searchEngineID: googleCSEKeyConstant)
 
         updateLabels()
         getSocketURL()
     }
 
     func getSocketURL() {
-        Alamofire.request("https://api-quiz.hype.space/shows/now?type=hq&userId=USER_ID", headers: hqheaders).responseJSON { response in
+        Alamofire.request("https://api-quiz.hype.space/shows/now?type=hq&userId=\(userIDConstant)", headers: hqheaders).responseJSON { response in
             if let result = response.result.value {
                 let json = JSON(result)
                 let broadcast = json["broadcast"]
@@ -80,7 +85,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         var request = URLRequest(url: URL(string: socketUrl)!)
         request.timeoutInterval = 5
         request.addValue("iOS/1.2.17", forHTTPHeaderField: "x-hq-client")
-        request.addValue("Bearer BEARER_TOKEN_HERE", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(bearerTokenConstant)", forHTTPHeaderField: "Authorization")
         request.addValue("MQ==", forHTTPHeaderField: "x-hq-stk")
         request.addValue("api-quiz.hype.space", forHTTPHeaderField: "Host")
         request.addValue("Keep-Alive", forHTTPHeaderField: "Connection")

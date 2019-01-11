@@ -16,7 +16,7 @@
 ## Some info to use for authorization for the WebSocket:
 - HQ reset Bearer tokens so you gotta use your own
 
-### Fill in info in lines 31, 50, 57 at the end of the link, and 83 of ViewController.swift and lines 13, and 14 in SiteEncoding.swift
+### Fill in info in lines 14-17 of ViewController.swift
 
 ## How it works:
 - Uses Alamofire to make a request to the host
